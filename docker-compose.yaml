@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  docs:
+    image: planton-pcs-docs
+    ports:
+      - "3000:80"
+  scraper:
+    image: algolia/docsearch-scraper
+    environment:
+      - APPLICATION_ID=NE3HND6FSC
+      - API_KEY=${ALGOLIA_INDEXING_API_KEY}
+      - CONFIG=${DOCSEARCH_SCRAPER_CONFIG_JSON}

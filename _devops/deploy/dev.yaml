@@ -1,0 +1,8 @@
+replicas: 1
+
+container_resource_limits:
+  cpu: 1
+  memory: 1Gi
+container_resource_requests:
+  cpu: 50m
+  memory: 50Mi
