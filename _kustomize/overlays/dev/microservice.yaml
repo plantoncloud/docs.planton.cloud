@@ -1,0 +1,8 @@
+apiVersion: product.planton.cloud/v1alpha1
+kind: MicroserviceInstance
+metadata:
+  name: docs
+  id: msi-planton-pcs-dev-docs-main
+spec:
+  owner:
+    environmentId: planton-pcs-dev

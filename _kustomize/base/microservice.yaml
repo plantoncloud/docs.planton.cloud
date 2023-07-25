@@ -1,0 +1,33 @@
+apiVersion: product.planton.cloud/v1alpha1
+kind: MicroserviceInstance
+metadata:
+  name: docs
+spec:
+  kubernetes:
+    container:
+      app:
+        image:
+          repo: us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pcs-uc1-docker/github.com/plantoncloud-inc/docs-website
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2Gi
+          requests:
+            cpu: 20m
+            memory: 50Mi
+    isWorkloadIdentityEnabled: false
+    minReplicas: 1
+    network:
+      appProtocol: http
+      containerPort: 80
+      ingressDomains:
+        - planton.cloud
+      servicePort: 80
+    podControllerType: deployment
+  pipeline:
+    codeProjectId: cp-planton-pcs-github-com-plantoncloud-inc-docs-website
+    isEnabled: true
+    isManualGateRequired: false
+    isReviewDeploymentsEnabled: false
+    gitBranch: main
+  version: main
