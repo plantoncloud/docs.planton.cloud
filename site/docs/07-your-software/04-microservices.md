@@ -1,5 +1,5 @@
 ---
-slug: /microservices
+slug: /your-software/microservices
 sidebar_label: Microservices
 ---
 
