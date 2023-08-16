@@ -1,9 +1,9 @@
 ---
-slug: /dns-domains
-sidebar_label: DNS Domains
+slug: /cloud-resources/dns-zones
+sidebar_label: DNS Zones
 ---
 
-# DNS Domains
+# DNS Zones
 
 DNS (Domain Name System) is a hierarchical decentralized naming system for computers, services, or other resources
 connected to the internet or a private network. A DNS domain is a unique identifier for a group of devices, computers,

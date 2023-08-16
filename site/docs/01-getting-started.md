@@ -14,14 +14,13 @@ cloud.
 1. [Planton Cloud Resource Hierarchy](#planton-cloud-resource-hierarchy)
 2. [Create Company and Product](#create-company-and-product)
 3. [Connect Cloud Account](#planton-cloud-resource-hierarchy)
-4. [Create Hosting Environment](#create-hosting-environment)
+4. [Create Kubernetes Cluster](#create-kuberetes-cluster)
 5. [Connect Your Source Code Server](#connect-your-source-code-server)
 6. [Create New Source Code Projects](#create-new-source-code-projects)
 7. [Add CI/CD for Source Code Projects](#add-cicd-for-microservices)
-8. [Create Microservices](#create-microservices)
-9. [Create Environments](#create-environments)
-10. [Deploy Microservices](#deploy-microservices)
-11. [Deploy Open Source Components](#deploy-open-source-components)
+8. [Create Environments](#create-environments)
+9. [Deploy Microservices](#deploy-microservices)
+10.[Deploy Open Source Components](#deploy-open-source-components)
 
 The next sections of this documentation will provide detailed information and guidance for each of these steps.
 
@@ -48,26 +47,26 @@ Connect your cloud account to Planton Cloud, allowing you to deploy your softwar
 Checkout [Cloud Accounts](/cloud-accounts) page to learn more about connecting your cloud account to
 Planton Cloud.
 
-## Create Hosting Environment
+## Create Kubernetes Cluster
 
-Create a batteries included Kubernetes Cluster (Hosting Environment) in your cloud account, which can be used to deploy
+Create a batteries included Kubernetes Cluster (Hosting Cluster) in your cloud account, which can be used to deploy
 your software.
 
-Checkout [Hosting Environments](/hosting-environments) to learn more about creating a Hosting Environment in
+Checkout [Kubernetes Clusters](/cloud-resources/kubernetes-clusters) to learn more about creating a Kubernetes Cluster using
 Planton Cloud.
 
 ## Connect Source Code Server
 
 Connect your source code server to Planton Cloud, which allows you to deploy your code to the cloud.
 
-Checkout [Source Code Servers](/source-code-servers) to learn more about connecting your source code server to
+Checkout [Source Code Servers](/your-software/source-code-servers) to learn more about connecting your source code server to
 Planton Cloud.
 
 ## Create New Source Code Projects
 
 Create new source code projects using provided templates, which will help you get started with developing your software.
 
-Checkout [Source Code Projects](/source-code-projects) to learn more about creating new source code projects using
+Checkout [Source Code Projects](/your-software/source-code-projects) to learn more about creating new source code projects using
 provided templates
 in Planton Cloud.
 
@@ -80,25 +79,25 @@ Checkout somethingsomething to learn more about adding CI/CD for source code pro
 ## Create Microservices
 
 Break down your software into smaller, more manageable pieces called microservices.
-Checkout [CI/CD Pipelines](/cicd-pipelines) to learn more about creating microservices in Planton Cloud.
+Checkout [CI/CD Pipelines](/your-software/cicd-pipelines) to learn more about creating microservices in Planton Cloud.
 
 ## Create Environments
 
 Create separate test and production environments to ensure the quality of your software.
-Checkout [Environments](/Environments) to learn more about creating test and production environments in Planton Cloud.
+Checkout [Environments](/environments) to learn more about creating test and production environments in Planton Cloud.
 
 ## Deploy Microservices
 
 Deploy your microservices to the test or production environment.
 
-Checkout [Microservices](/microservices) to learn more about deploying microservices to test and production environments
+Checkout [Microservices](/your-software/microservices) to learn more about deploying microservices to test and production environments
 in Planton Cloud.
 
 ## Deploy Open Source Components
 
 Create databases and Kafka clusters, if your application uses them.
 
-Checkout [Databases](/databases) to learn more about creating databases and [Kafka Clusters](/kafka-clusters) page to
+Checkout [Postgres](/open-source/postgres) to learn more about creating postgres databases and [Kafka Clusters](/open-source/apache-kafka) page to
 learn more about creating Kafka clusters in Planton Cloud.
 
 Congratulations! You're now ready to start deploying your software to the cloud with ease and efficiency using Planton

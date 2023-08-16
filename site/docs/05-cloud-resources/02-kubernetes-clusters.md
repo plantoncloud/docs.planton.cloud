@@ -1,9 +1,9 @@
 ---
-slug: /hosting-environments
-sidebar_label: Hosting Environments
+slug: /cloud-resources/kubernetes-clusters
+sidebar_label: Kubernetes Clusters
 ---
 
-# Hosting Environments
+# Kubernetes Clusters
 
 Planton Cloud provides a fully-managed Kubernetes cluster that includes all the necessary components needed to run and
 deploy containerized applications. The batteries included Kubernetes cluster created is called as a hosting environment

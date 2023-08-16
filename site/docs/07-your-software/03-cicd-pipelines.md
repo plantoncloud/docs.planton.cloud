@@ -1,5 +1,5 @@
 ---
-slug: /cicd-pipelines
+slug: /your-software/cicd-pipelines
 sidebar_label: CI/CD Pipelines
 ---
 

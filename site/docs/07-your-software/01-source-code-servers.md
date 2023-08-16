@@ -1,5 +1,5 @@
 ---
-slug: /source-code-servers
+slug: /your-software/source-code-servers
 sidebar_label: Source Code Servers
 ---
 
