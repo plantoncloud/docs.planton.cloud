@@ -9,6 +9,10 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'Planton Cloud', // Usually your GitHub org/user name.
     projectName: 'docs', // Usually your repo name.
+    markdown: {
+        mermaid: true,
+    },
+    themes: ['@docusaurus/theme-mermaid'],
     themeConfig: {
         colorMode: {
             defaultMode: 'light',
@@ -40,7 +44,6 @@ module.exports = {
             {
                 docs: {
                     routeBasePath: '/',
-                    remarkPlugins: [[require('mdx-mermaid'), {mermaid: {theme: 'dark'}}]],
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
