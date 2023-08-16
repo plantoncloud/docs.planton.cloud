@@ -3,3 +3,4 @@
 .env_export
 site/.yarn
 site/.docusaurus
+site/build
