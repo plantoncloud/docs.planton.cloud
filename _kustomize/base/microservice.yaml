@@ -7,7 +7,7 @@ spec:
     container:
       app:
         image:
-          repo: us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pcs-uc1-docker/github.com/plantoncloud-inc/docs-website
+          repo: us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-pcs-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website
         resources:
           limits:
             cpu: 2000m
