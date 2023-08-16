@@ -32,7 +32,7 @@ release: build search-index image
 	kubectl patch deployment -n planton-pcs-prod-docs planton-pcs-prod-docs-main --patch '{"spec": {"template": {"spec": {"containers": [{"name": "microservice","image": "'${docker_image}'"}]}}}}'
 
 cli-docs:
-	cd site/docs;planton docs --output-dir 05-cli
-	cd site/docs;rm -f 05-cli/planton/root.md;rm -f 05-cli/planton/docs.md;rm -f 05-cli/planton/version.md;
-	cp custom/cli-category.yml site/docs/05-cli/_category_.yml
+	cd site/docs;planton docs --output-dir 99-cli
+	cd site/docs;rm -f 99-cli/planton/root.md;rm -f 99-cli/planton/docs.md;rm -f 99-cli/planton/version.md;
+	cp custom/cli-category.yml site/docs/99-cli/_category_.yml
 	find . -name "root.md" |xargs rm

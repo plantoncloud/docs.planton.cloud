@@ -21,6 +21,7 @@ planton auth use [flags]
 ### Options inherited from parent commands
 
 ```
-      --debug   set log level to debug
+      --debug       set log level to debug
+      --id string   id of the resource
 ```
 

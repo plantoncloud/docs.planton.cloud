@@ -20,7 +20,7 @@ planton company list [flags]
 ### Options inherited from parent commands
 
 ```
-      --company-id string   id of the company
-      --debug               set log level to debug
+      --debug       set log level to debug
+      --id string   id of the resource
 ```
 

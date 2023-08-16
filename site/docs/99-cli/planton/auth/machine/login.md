@@ -14,7 +14,7 @@ planton auth machine login [flags]
 ### Options
 
 ```
-      --client-id string       client-id of the machine account to log in
+      --client-email string    client-email of the machine account to log in
       --client-secret string   client-secret of the machine account to log in
   -h, --help                   help for login
 ```
@@ -22,6 +22,7 @@ planton auth machine login [flags]
 ### Options inherited from parent commands
 
 ```
-      --debug   set log level to debug
+      --debug       set log level to debug
+      --id string   id of the resource
 ```
 
