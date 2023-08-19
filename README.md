@@ -24,7 +24,7 @@ make release docker_image=$new_image algolia_indexing_api_key=$ALGOLIA_INDEXING_
 Run the following command from the root of this project to configure the correct node version to use required for this project.
 
 ```shell
-nvm use
+nvm alias default $(nvm version)
 ```
 
 ## Yarn Versions
