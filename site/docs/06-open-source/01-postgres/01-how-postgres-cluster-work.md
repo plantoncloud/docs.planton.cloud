@@ -64,7 +64,7 @@ spec:
           cpu: 50m
           memory: 100Mi
   owner:
-    companyId: xxxxxxx
+    companyId: planton
     environmentId: planton-cloud-dev
     environmentName: dev
     hostingClusterId: hc-planton-gcp-jul2423

@@ -182,7 +182,7 @@ status:
     isActive: true
     isPaused: false
   stackExecution:
-    companyId: xxxxxxx
+    companyId: planton
     environmentId: planton-cloud-dev
     errorMessage: ""
     id: 163eeeed-92f3-4cfd-8c8e-f72d788f61df
