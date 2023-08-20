@@ -17,7 +17,6 @@ manual configuration and deployment. Whether you're deploying a single instance 
 data needs, our automation tools make the process seamless and efficient.
 
 # How postgres cluster work
-Learn how postgres cluster work within planton cloud
 
-- [How postgres cluster work](./01-how-postgres-cluster-work.md)
+- [Learn how postgres cluster work within planton cloud](./01-how-postgres-cluster-work.md)
 

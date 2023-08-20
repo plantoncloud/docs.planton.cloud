@@ -1,6 +1,6 @@
 ---
 slug: /open-source/apache-kafka
-sidebar_label: Apache Kafka
+sidebar_label: Redis
 ---
 
 # Apache Kafka

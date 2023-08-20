@@ -42,7 +42,7 @@ Only TLS-enabled standard-endpoints are eligible for creating Postgres endpoints
 
 ## Sample Postgres Cluster Data
 
-```yaml {4-5,7-20,23}
+```yaml {4-5,7-20,23} showLineNumbers
 apiVersion: product.planton.cloud/v1alpha1
 kind: PostgresCluster
 metadata:
@@ -64,7 +64,7 @@ spec:
           cpu: 50m
           memory: 100Mi
   owner:
-    companyId: xxxxxxx
+    companyId: planton
     environmentId: planton-cloud-dev
     environmentName: dev
     hostingClusterId: hc-planton-gcp-jul2423
