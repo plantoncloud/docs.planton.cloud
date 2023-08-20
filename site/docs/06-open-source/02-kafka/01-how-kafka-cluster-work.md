@@ -106,7 +106,7 @@ then the Kafka topic ID would be kft-planton-cloud-dev-main-product-state.
 
 ## Sample Kafka Cluster Data
 
-```yaml {8-61}
+```yaml {8-61} showLineNumbers
 apiVersion: product.planton.cloud/v1alpha1
 kind: Kafka Cluster
 metadata:
