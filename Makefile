@@ -1,6 +1,8 @@
 algolia_indexing_api_key ?= "algolia-indexing-api-key"
 
-docker_image?=us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pcs-uc1-docker/gitlab.com/plantoncode/planton/pcs/microservice/docs:local
+docker_image_tag ?= docs-$(shell uuidgen)
+
+docker_image:=us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-cloud-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website:${docker_image_tag}
 
 .PHONY: clean
 clean:
@@ -19,17 +21,17 @@ run:
 	cd site;yarn start
 
 search-index:
-	docker build -t planton-pcs-docs .
+	docker build -t planton-cloud-docs .
 	bash script/index.sh '$(algolia_indexing_api_key)'
 
 .PHONY: build-image
-build-image:
+build-image: build
 	docker build --platform linux/amd64 -t ${docker_image} .
 	docker push ${docker_image}
 
-release: build search-index image
+release: build-image search-index
 	kubectx ho-planton-gcp-uc1-pcs-a-cora
-	kubectl patch deployment -n planton-pcs-prod-docs planton-pcs-prod-docs-main --patch '{"spec": {"template": {"spec": {"containers": [{"name": "microservice","image": "'${docker_image}'"}]}}}}'
+	kubectl patch deployment -n planton-cloud-prod-docs planton-cloud-prod-docs-main --patch '{"spec": {"template": {"spec": {"containers": [{"name": "microservice","image": "'${docker_image}'"}]}}}}'
 
 cli-docs:
 	cd site/docs;planton docs --output-dir 99-cli

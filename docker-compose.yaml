@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   docs:
-    image: planton-pcs-docs
+    image: planton-cloud-docs
     ports:
       - "3000:80"
   scraper:

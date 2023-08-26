@@ -7,7 +7,7 @@ spec:
     container:
       app:
         image:
-          repo: us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-pcs-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website
+          repo: us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-cloud-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website
         resources:
           limits:
             cpu: 2000m
@@ -25,7 +25,7 @@ spec:
       servicePort: 80
     podControllerType: deployment
   pipeline:
-    codeProjectId: cp-planton-pcs-github-com-plantoncloud-inc-docs-website
+    codeProjectId: cp-planton-cloud-github-com-plantoncloud-inc-docs-website
     isEnabled: true
     isManualGateRequired: false
     isReviewDeploymentsEnabled: false

@@ -11,8 +11,8 @@ jobs:
       PLANTON_CLOUD_CLIENT_EMAIL: ${{ secrets.PLANTON_CLOUD_CLIENT_EMAIL }}
       PLANTON_CLOUD_CLIENT_SECRET: ${{ secrets.PLANTON_CLOUD_CLIENT_SECRET }}
     with:
-      PLANTON_CLOUD_ARTIFACT_STORE_ID: afs-planton-pcs-gcp-uc1
+      PLANTON_CLOUD_ARTIFACT_STORE_ID: afs-planton-cloud-gcp-uc1
       DOCKER_REPO_HOSTNAME: us-central1-docker.pkg.dev
-      CONTAINER_IMAGE_REPO: us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-pcs-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website
+      CONTAINER_IMAGE_REPO: us-central1-docker.pkg.dev/ca-planton-gcp-sh-zg/afs-planton-cloud-gcp-uc1-docker/github.com/plantoncloud-inc/docs-website
       CONTAINER_IMAGE_TAG: ${{ github.sha }}
       BUILD_DIRECTORY: site

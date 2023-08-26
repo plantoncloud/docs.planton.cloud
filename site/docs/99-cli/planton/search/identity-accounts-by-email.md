@@ -24,6 +24,6 @@ planton search identity-accounts-by-email [flags]
       --debug                  set log level to debug
       --id string              id of the resource
   -o, --output-format string   output format. ex: json, yaml, table (default "table")
-  -p, --product-id string      product id (default "planton-pcs")
+  -p, --product-id string      product id (default "planton-cloud")
 ```
 

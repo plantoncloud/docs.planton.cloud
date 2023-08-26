@@ -4,4 +4,4 @@ metadata:
   name: docs
 spec:
   owner:
-    environmentId: planton-pcs-prod
+    environmentId: planton-cloud-prod
