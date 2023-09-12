@@ -12,7 +12,10 @@ module.exports = {
     markdown: {
         mermaid: true,
     },
-    themes: ['@docusaurus/theme-mermaid'],
+    themes: [
+        '@docusaurus/theme-mermaid',
+        'docusaurus-theme-github-codeblock',
+    ],
     themeConfig: {
         colorMode: {
             defaultMode: 'light',
@@ -36,6 +39,12 @@ module.exports = {
             style: 'dark',
             links: [],
             copyright: `Copyright © ${new Date().getFullYear()} Planton Cloud.`,
+        },
+        codeblock: {
+            showGithubLink: true,
+            githubLinkLabel: 'View on GitHub',
+            showRunmeLink: false,
+            runmeLinkLabel: 'Checkout via Runme'
         },
     },
     presets: [
