@@ -6,10 +6,10 @@ sidebar_label: How kafka cluster work
 # How Kafka Cluster work within planton cloud
 Explore how Kafka clusters are configured and managed within Planton Cloud.
 
-## Specification
+## Kafka Cluster API on Planton Cloud
 
-```js reference title="Kafka Cluster Spec"
-https://github.com/plantoncloud/planton-cloud-apis/blob/d3a3cb84d520c62eb902e02a5ec9bd279233a33c/planton/apis/proto/v1/deploy/opensource/kafka/rpc/model.proto#L52-L177
+```js reference title="Kafka Cluster API"
+https://github.com/plantoncloud/planton-cloud-apis/blob/v0.0.1/cloud/planton/apis/v1/code2cloud/deploy/kafka/rpc/model.proto#L52-L177
 ```
 
 * **Environment:** The specific environment where the Kafka cluster will be created.

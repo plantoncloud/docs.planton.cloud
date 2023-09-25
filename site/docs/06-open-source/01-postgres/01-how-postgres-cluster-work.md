@@ -6,7 +6,14 @@ sidebar_label: How postgres cluster work
 # How Postgres Cluster work within planton cloud
 Explore how Postgres clusters are configured and managed within Planton Cloud.
 
+## Postgres Cluster API on Planton Cloud
+
+```js reference title="PostgresCluster API"
+https://github.com/plantoncloud/planton-cloud-apis/blob/v0.0.1/cloud/planton/apis/v1/code2cloud/deploy/postgres/rpc/model.proto#L16-L83
+```
+
 ## Specification
+
 * **Environment:** The specific environment where the Postgres cluster will be created.
 
 * **Postgres Cluster name:** A user-defined name for the cluster.

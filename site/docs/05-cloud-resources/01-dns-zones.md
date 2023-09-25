@@ -11,6 +11,12 @@ or servers that are connected to the internet. Each domain is associated with an
 communicate with one another. Managing DNS domains is an important aspect of managing your infrastructure, as it enables
 you to control the domain names used for your websites, applications, and other online services.
 
+## DnsZone API on Planton Cloud
+
+```js reference title="DnsZone API"
+https://github.com/plantoncloud/planton-cloud-apis/blob/v0.0.1/cloud/planton/apis/v1/code2cloud/deploy/dnszone/rpc/model.proto#L16-L132
+```
+
 ## Managing DNS Domains on Planton Cloud Console
 
 Planton Cloud Console provides a comprehensive set of tools for managing your DNS domains. The console includes a

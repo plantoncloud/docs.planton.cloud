@@ -9,6 +9,12 @@ Microservices architecture is an approach to building software applications that
 application into small, independent services that can be developed, deployed, and scaled independently. Each
 microservice is responsible for a specific business function and can communicate with other microservices through APIs.
 
+## MicroserviceInstance API on Planton Cloud
+
+```js reference title="Kafka Cluster Spec"
+https://github.com/plantoncloud/planton-cloud-apis/blob/v0.0.1/cloud/planton/apis/v1/code2cloud/deploy/microservice/rpc/model.proto#L17-L155
+```
+
 ## 12 Factor App Principles
 
 When developing microservices, it's important to follow the 12 factor app principles, which are a set of best practices

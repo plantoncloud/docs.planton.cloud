@@ -12,6 +12,12 @@ easily deploy and manage various components within their applications. By provid
 Planton Cloud enables developers to focus on building and deploying their applications, without worrying about the
 underlying infrastructure.
 
+## KubeCluster API on Planton Cloud
+
+```js reference title="KubeCluster API"
+https://github.com/plantoncloud/planton-cloud-apis/blob/v0.0.1/cloud/planton/apis/v1/code2cloud/deploy/kubecluster/rpc/model.proto#L18-L196
+```
+
 ## Istio
 
 Istio is an open-source service mesh that provides traffic management, security, and observability for
