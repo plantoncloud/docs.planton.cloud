@@ -1,6 +1,6 @@
 export default {
     index: 'Welcome',
-    'connections': 'Connections',
+    'connections': '',
     'deployment-store': 'Deployment Store',
     'pulumi-modules': 'Pulumi Modules',
     'resource-explorer': 'Resource Explorer',
