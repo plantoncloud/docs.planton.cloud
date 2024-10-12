@@ -6,7 +6,7 @@ export default {
     'built-in-ci-cd': 'Built in CI/CD',
     'resource-explorer': 'Resource Canvas',
     'teams': 'Team Administration',
-    'version-history': 'Version History',
+    'audit': 'Audit',
     'microservices': 'Microservices',
     'k8s-d2-ops': 'Kubernetes Ops',
 }
