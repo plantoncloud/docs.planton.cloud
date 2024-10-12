@@ -3,6 +3,7 @@ export default {
     gcp: 'Google Cloud',
     azure: 'Microsoft Azure',
     kubernetes: 'Kubernetes',
+    docker: 'Docker Registry',
     github: 'GitHub',
     gitlab: 'GitLab',
     'chat-gpt': 'ChatGPT',
