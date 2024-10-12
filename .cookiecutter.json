@@ -1,9 +1,0 @@
-{
-    "_template": "git@gitlab.com:leftbin/pub/dev/lib/at/fe/at-pot-docs.git",
-    "container_port": "80",
-    "dns_enabled": "true",
-    "dns_visibility": "pvt",
-    "health_check": "false",
-    "is_http_server": "true",
-    "repo_name": Docs
-}

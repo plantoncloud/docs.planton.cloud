@@ -1,7 +1,0 @@
-apiVersion: product.planton.cloud/v1alpha1
-kind: MicroserviceInstance
-metadata:
-  name: docs
-spec:
-  owner:
-    environmentId: planton-cloud-prod
