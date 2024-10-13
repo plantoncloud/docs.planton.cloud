@@ -1,0 +1,267 @@
+Welcome to the detailed user guide for the **Pulumi Module Registry** within **Planton Cloud**. This guide is designed
+to help you understand what the Pulumi Module in Planton Cloud are, how to use them effectively, and how they integrate
+into your deployment workflows.
+
+The Pulumi Module in Planton Cloud provide a centralized platform for managing, exploring, and utilizing Pulumi modules
+in your infrastructure deployments. Whether you're a developer looking to deploy resources or a platform engineer aiming
+to standardize infrastructure code, the Pulumi Module Registry offers the tools you to streamline your processes.
+
+---
+
+## Table of Contents
+
+1. [What is the Pulumi Module Registry?](#what-is-the-pulumi-module-registry)
+2. [Benefits of Using the Pulumi Module Registry](#benefits-of-using-the-pulumi-module-registry)
+3. [Accessing the Pulumi Module Registry](#accessing-the-pulumi-module-registry)
+4. [Exploring Available Pulumi Modules](#exploring-available-pulumi-modules)
+5. [Registering Custom Pulumi Modules](#registering-custom-pulumi-modules)
+6. [Using Pulumi Modules in Deployments](#using-pulumi-modules-in-deployments)
+7. [Managing Pulumi Modules](#managing-pulumi-modules)
+8. [Best Practices](#best-practices)
+9. [Conclusion](#conclusion)
+
+---
+
+## What is the Pulumi Module Registry?
+
+The **Pulumi Module Registry** in Planton Cloud is a centralized repository where you can:
+
+- **Explore** existing Pulumi modules (infrastructure code) available for deploying resources.
+- **Register** custom Pulumi modules developed within your organization.
+- **Manage** and **select** Pulumi modules during resource deployments.
+
+Pulumi modules are reusable components that define how infrastructure resources are provisioned and configured on
+various cloud providers. In Planton Cloud, the registry serves as a bridge between your deployment configurations and
+the underlying infrastructure code.
+
+---
+
+## Benefits of Using the Pulumi Module Registry
+
+- **Centralization**: All Pulumi modules used in your organization are stored in one place, making them easy to find and
+  manage.
+- **Reusability**: Promote reuse of infrastructure code, reducing duplication and inconsistencies.
+- **Customization**: Support for custom Pulumi modules allows for tailored infrastructure provisioning that meets your
+  organization's specific needs.
+  -Integration**: Seamless integration with Planton Cloud's deployment workflows simplifies the process of selecting and
+  using Pulumi modules.
+  -Collaboration**: Enhances collaboration between developers and platform engineers by providing visibility into used
+  in deployments.
+  -Governance**: Centralized management aids in enforcing standards and best practices across the organization.
+
+---
+
+## Accessing the Pulumi Module Registry
+
+1. **Log in to Planton Cloud**: Navigate to your Planton Cloud instance and log in with your credentials.
+2. **Navigate to the Registry**:
+    - From the main dashboard, locate the **Pulumi Module Registry** option in the sidebar or under a relevant menu.
+3. **View the Registry**: You'll be presented with a list of available Pulumi modules, both default and custom.
+
+---
+
+## Exploring Available Pulumi Modules
+
+The registry contains two types of Pulumi modules:
+
+- **Default Modules**: Modules provided by Project Planton for common deployment components.
+- **Custom**: Modules created and registered by your organization's platform engineers.
+
+### Browsing Modules
+
+- **List View**: See a list of modules with basic information such as name, description, and provider.
+- **Search and Filter**: Use search functionality to find modules by name, provider, or keywords.
+- **Module Details**: Click on a module to view detailed information, including:
+    - **Description**: Overview of what the module does.
+    - **Version**: The version of the module.
+    - **Provider**: Cloud provider (e.g., AWS, GCP, Azure).
+    - **Source**: Link to the source code repository (e.g., GitHub).
+    - **Inputs/Outputs**: Parameters and outputs defined by the module.
+    - **Maintainer**: Contact information for the module's maintainer.
+
+
+![console-app-ss-1.png](/images/pulumi-module-registry/console-app-ss-1.png)
+
+![cli-ss-1.png](/images/pulumi-module-registry/cli-ss-1.png)
+
+### Understanding Module Information
+
+- **Source Code**: Review the source code to understand the module's implementation.
+- **Dependencies**: Check for any dependencies or required configurations.
+- **Usage Examples**: Some modules may provide usage examples or documentation documentation.
+
+![console-app-ss-2.png](/images/pulumi-module-registry/console-app-ss-2.png)
+
+---
+
+## Registering Custom Pulumi Modules
+
+Platform engineers or DevOps teams may need to create custom Pulumi modules to meet specific infrastructure
+requirements.
+
+### Steps to Register a Custom Module
+
+1. **Develop the Pulumi Module**:
+   -Write** the Pulumi code in your preferred programming language supported by Pulumi (e.g., TypeScript, Python, Go).
+    - **Test** the module to ensure it works as expected.
+    - **Version Control**: Commit the code to a version control system like GitHub.
+
+2. **Prepare for Registration**:
+    - Ensure the repository is accessible (public or private with appropriate access).
+    - Gather necessary information (repository URL, authentication details if private).
+
+3. **Register the Module in Planton Cloud**:
+    - **Access the Pulumi Module Registry**.
+    - **Click on "Register New Module"** or similar action button.
+    - **Fill in Module Details**:
+        - **Name**: Provide a unique and descriptive name.
+        - **Description**: Explain what the module does.
+        - **Version**: Specify the version (e.g., v1.0.0).
+        - **Repository URL**: Enter the URL to the GitHub repository.
+        - **Authentication**:
+            - If the repository is private, provide authentication details.
+            - Options may include SSH keys, personal access tokens, or OAuth tokens.
+        - **Tags/Categories**: Add relevant tags to aid in searching.
+    - **Submit** the form to complete registration.
+
+4. **Verification**:
+    - Planton Cloud may perform a verification process to ensure the module is accessible and valid.
+    - You may receive notifications if there are issues that need to be resolved.
+
+### Managing Custom Modules
+
+- **Update Modules**: When updating the module, ensure you update the version and re-register or update the existing
+  registration in Planton Cloud.
+- **Deprecation**: If a module is no longer needed, you can deprecate or remove it from the registry.
+- **Documentation**: Keep module documentation well-documented to aid other users in understanding and using them.
+
+---
+
+## Using Pulumi Modules in Deployments
+
+When deploying resources in Planton Cloud, you can select which Pulumi module to use for the deployment.
+
+### Deployment Steps
+
+1. **Initiate a Deployment**:
+    - From the **Deployment Component Store**, choose the resource you wish to deploy (e.g., AWS S3 Bucket, GCP GCS
+      Bucket).
+    - Click on **"Deploy"** or **"Create"**.
+
+2. **Configure Deployment Settings**:
+    - **Fill in Resource Details**: Provide necessary configuration parameters for the resource.
+    - **Select Environment**: Choose the environment (e.g., development, staging, production).
+
+3. **Stack Job Settings**:
+   -Locate** the **"Stack Job Settings"** section in the deployment form form.
+    - **Pulumi Module Selection**:
+        - **Default Option**: If you leave this blank, Planton Cloud will use the default module associated with the
+          resource.
+        - **Custom Module**: Click on the dropdown to select a custom Pulumi module from the registry.
+        - **Search Modules**: If you have many modules, use the search functionality to find the desired one.
+
+4. **Complete Deployment**:
+    - **Review Configuration**: Ensure all settings are correct.
+    - **Deploy**: Click on **"Deploy"** or **"Create"** to initiate the deployment.
+    - **Stack Job Execution**: Planton Cloud will trigger a stack job that uses the selected Pulumi module to deploy the
+      resource.
+
+### Considerations
+
+- **Compatibility**:Ensure** that the Pulumi module you select are compatible with the resource and configuration you
+  you're deploying.
+- **Permissions**:You** must have access to the Pulumi module, especially if it's a private repository.
+  -Communication**: If you're unsure which module to use, consult with your platform engineering team.
+
+---
+
+## Managing Pulumi Modules
+
+### Updating Modules
+
+- **If** a new version of a Pulumi module is released, you may need to update your deployments to use the latest
+  version.
+- **Process**:
+    - **Update Module in Registry**: Ensure the registry reflects the new version.
+    - **Modify Deployments**: For existing deployments, edit the stack job settings to select the updated module.
+
+### Removing Modules
+
+-If** a module is deprecated, you should avoid using it in new deployments.
+
+- **Process**:
+  -Communicate** with team members about the deprecation.
+    - **Update Existing Deployments**: Transition to a supported module if necessary.
+    - **Remove from Registry**: Optionally remove the module from the registry to prevent future use.
+
+### Viewing Module Usage
+
+- **Planton Cloud** may provide insights into where modules are used.
+- **Benefits**:
+  -Identifying** dependencies for impact analysis.
+  -Understanding** module adoption and usage patterns.
+
+---
+
+## Best Practices
+
+- **Maintain Versioning**: Always specify version numbers when registering modules to avoid confusion.
+- **Documentation**: Provide thorough documentation within the module and in the registry description.
+- **Testing**: Before registering a module, ensure it is well-tested and stable.
+- **Security**: Securely manage access to private repositories and credentials.
+- **Collaboration**: Encourage communication between developers and platform engineers to align on module usage.
+- **Compliance**: Ensure custom modules comply with organizational policies and standards.
+
+---
+
+## Conclusion
+
+The Pulumi Module Registry in Planton Cloud is a powerful feature that streamlines the deployment of infrastructure
+resources by centralizing the management of Pulumi modules. By leveraging the registry, organizations can enforce
+standards, promote reuse, and enhance collaboration between developers and platform engineers.
+
+Whether you're deploying standard resources or custom configurations, the registry simplifies the process of selecting
+and managing the infrastructure code that powers your cloud deployments.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+**Q1: Can I use Pulumi modules written in different programming languages?**
+
+- **Yes**. Pulumi supports multiple programming languages, and the registry can handle modules written in any supported
+  language.
+
+**Q2: How does Planton Cloud handle authentication for private repositories?**
+
+- **Authentication** details can be provided during module registration, such as SSH keys or tokens. Planton Cloud
+  securely stores and uses these credentials to access the repository.
+
+**Q3: Can I restrict access to certain Pulumi modules in the registry?**
+
+- **Planton Cloud** may provide RBAC (Role-Based Access Control) features to control who can view or use specific
+  modules.
+
+**Q4: What happens if a Pulumi module fails during deployment?**
+
+- The stack job will report the failure, and logs will be available for troubleshooting. Ensure the module is correctly
+  implemented and that all dependencies are met.
+
+**Q5: Is there a way to share modules across different environments or organizations?**
+
+- ModulesModule** visibility and access depend on how you configure the registry and your organization's policies.
+  Modules sharing across environments is typically supported.
+
+---
+
+## Additional Resources
+
+- **Planton Cloud Documentation**: [Link to official documentation]
+- **Pulumi Documentation**: [Pulumi official website](https://www.pulumi.com/docs/)
+- **Best Practices for Infrastructure as Code**: [Link to relevant articles or guides]
+- **Community Forums**: Join discussions with other Planton Cloud users.
+
+---
+
+Effectively utilizing the Pulumi Module Registry, you can enhance your infrastructure deployment processes,
+ensuring consistency, efficiency, and compliance across your organization.

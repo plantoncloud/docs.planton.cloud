@@ -1,9 +1,10 @@
 export default {
     index: 'Welcome',
+    'pp-vs-pc': 'Project Planton',
     'connections': '',
     'deployment-store': 'Deployment Store',
-    'pulumi-modules': 'Pulumi Modules',
-    'built-in-ci-cd': 'Built in CI/CD',
+    'pulumi-registry': 'Pulumi Registry',
+    'built-in-ci-cd': 'Built-In CI/CD',
     'resource-explorer': 'Resource Canvas',
     'teams': 'Team Administration',
     'audit': 'Audit',
