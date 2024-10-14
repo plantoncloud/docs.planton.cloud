@@ -4,7 +4,7 @@ export default {
     'connections': '',
     'deployment-store': 'Deployment Store',
     'pulumi-registry': 'Pulumi Registry',
-    'built-in-ci-cd': 'Built-In CI/CD',
+    'iac-ci-cd': 'IaC CI/CD',
     'resource-explorer': 'Resource Canvas',
     'teams': 'Team Administration',
     'audit': 'Audit',
