@@ -1,7 +1,241 @@
-## AWS Connection
+This user guide provides step-by-step instructions on how to connect your AWS account to Planton Cloud, share the connection with another environment, and deploy an Amazon S3 bucket to the shared environment. Follow these steps to integrate AWS with Planton Cloud and manage your cloud resources efficiently.
 
-#### Console App
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Connecting Your AWS Account to Planton Cloud](#connecting-your-aws-account-to-planton-cloud)
+3. [Creating an AWS Credential in Planton Cloud](#creating-an-aws-credential-in-planton-cloud)
+4. [Sharing the AWS Credential with Another Environment](#sharing-the-aws-credential-with-another-environment)
+5. [Deploying an S3 Bucket to the Shared Environment](#deploying-an-s3-bucket-to-the-shared-environment)
+6. [Verifying the Deployment in AWS Console](#verifying-the-deployment-in-aws-console)
+7. [Best Practices and Security Considerations](#best-practices-and-security-considerations)
+8. [Conclusion](#conclusion)
+
+---
+
+## Prerequisites
+
+- An active AWS account with administrative privileges.
+- Access to the Planton Cloud console.
+- Basic understanding of AWS IAM (Identity and Access Management) and S3.
+
+---
+
+## Connecting Your AWS Account to Planton Cloud
+
+### Step 1: Log in to Planton Cloud
+
+1. Navigate to the Planton Cloud console and log in with your credentials.
+
+_**[Screenshot Placeholder: Planton Cloud login page]**_
+
+### Step 2: Navigate to the Connections Page
+
+1. Once logged in, ensure you are in the organization context by checking the top navigation bar.
+
+_**[Screenshot Placeholder: Planton Cloud organization context highlighted]**_
+
+2. Click on the **Connections** tab in the sidebar menu.
 
 ![img.png](/images/connections/aws/img.png)
 
+### Step 3: Initiate the AWS Connection
+
+1. Click on the **Connect** button to start adding a new AWS connection.
+
 ![img_1.png](/images/connections/aws/img_1.png)
+
+---
+
+## Creating an AWS Credential in Planton Cloud
+
+### Step 1: Provide AWS Connection Details
+
+1. In the **Connect AWS Credential** form, fill in the following details:
+
+- **Name**: A descriptive name for your AWS credential (e.g., `AWS Prod Credential`).
+
+_**[Screenshot Placeholder: AWS Credential form with 'Name' field highlighted]**_
+
+- **AWS Account ID**: Obtain this from your AWS console.
+
+- In AWS console, click on your account name at the top right corner and select **My Account**.
+- Copy the **AWS Account ID**.
+
+_**[Screenshot Placeholder: AWS Account ID location in AWS console]**_
+
+- **Default Region**: Specify the AWS region you want to use (e.g., `ap-south-1`).
+
+_**[Screenshot Placeholder: Default Region field in the AWS Credential form]**_
+
+- **Access Key ID** and **Secret Access Key**: You will obtain these from AWS IAM.
+
+### Step 2: Create an IAM User in AWS Console
+
+1. In the AWS console, navigate to the **IAM** service.
+
+_**[Screenshot Placeholder: AWS console with IAM service highlighted]**_
+
+2. Click on **Users** in the sidebar menu.
+
+_**[Screenshot Placeholder: IAM Users section]**_
+
+3. Click on **Add users**.
+
+_**[Screenshot Placeholder: Add users button in IAM Users section]**_
+
+4. Provide a user name (e.g., `PlantonCloudUser`) and select **Access key - Programmatic access**.
+
+_**[Screenshot Placeholder: Add user form with 'Access key - Programmatic access' selected]**_
+
+5. Click **Next: Permissions**.
+
+6. Attach existing policies directly:
+
+- Search for and select **AdministratorAccess** policy.
+
+_**[Screenshot Placeholder: Selecting AdministratorAccess policy]**_
+
+**Note**: Granting AdministratorAccess is not a best practice for production environments. For more secure access, create a custom policy with limited permissions.
+
+7. Click **Next: Tags** (optional), then **Next: Review**, and finally **Create user**.
+
+8. On the success page, you will see the **Access key ID** and **Secret access key**. **Download** the CSV file or copy these values immediately, as you won't be able to retrieve them later.
+
+_**[Screenshot Placeholder: Access key ID and Secret access key displayed]**_
+
+### Step 3: Enter Credentials in Planton Cloud
+
+1. Return to the Planton Cloud **Connect AWS Credential** form.
+
+2. Enter the **Access Key ID** and **Secret Access Key** obtained from AWS.
+
+_**[Screenshot Placeholder: AWS Credential form with Access Key ID and Secret Access Key fields filled]**_
+
+3. Click **Submit** to create the AWS credential in Planton Cloud.
+
+_**[Screenshot Placeholder: AWS Credential form with Submit button highlighted]**_
+
+---
+
+## Sharing the AWS Credential with Another Environment
+
+### Step 1: Create a New Environment in Planton Cloud
+
+1. In the Planton Cloud console, navigate to **Environments**.
+
+_**[Screenshot Placeholder: Environments tab in Planton Cloud]**_
+
+2. Click on **Create Environment**.
+
+_**[Screenshot Placeholder: Create Environment button]**_
+
+3. Provide a name for the new environment (e.g., `App Prod`) and click **Create**.
+
+_**[Screenshot Placeholder: New environment creation form]**_
+
+### Step 2: Share the Credential
+
+1. Navigate back to the **Connections** tab and locate the AWS credential you created earlier.
+
+_**[Screenshot Placeholder: AWS credential listed in Connections]**_
+
+2. Click on the **Share** button associated with the AWS credential.
+
+_**[Screenshot Placeholder: Share button next to AWS credential]**_
+
+3. In the **Share Credential** dialog, select the environment you want to share the credential with (e.g., `App Prod`).
+
+_**[Screenshot Placeholder: Share Credential dialog with environment selection]**_
+
+4. Click **Add** or **Share** to share the credential.
+
+_**[Screenshot Placeholder: Confirmation of credential sharing]**_
+
+---
+
+## Deploying an S3 Bucket to the Shared Environment
+
+### Step 1: Switch to the Target Environment
+
+1. In Planton Cloud, switch to the `App Prod` environment using the environment selector at the top.
+
+_**[Screenshot Placeholder: Environment selector with 'App Prod' selected]**_
+
+### Step 2: Initiate S3 Bucket Deployment
+
+1. Click on the **Deployments** or **Resources** tab (depending on the interface).
+
+_**[Screenshot Placeholder: Deployments/Resources tab]**_
+
+2. Click on **Create Resource** or **Deploy New Resource**.
+
+_**[Screenshot Placeholder: Create/Deploy Resource button]**_
+
+3. Select **Amazon S3 Bucket** from the list of available resources.
+
+_**[Screenshot Placeholder: Resource selection with Amazon S3 Bucket highlighted]**_
+
+### Step 3: Configure the S3 Bucket Deployment
+
+1. In the deployment form, provide the following details:
+
+- **Bucket Name**: A unique name for your S3 bucket (e.g., `my-plantoncloud-bucket`).
+
+_**[Screenshot Placeholder: S3 deployment form with Bucket Name field]**_
+
+- **Region**: Ensure it matches the default region specified in your AWS credential (e.g., `ap-south-1`).
+
+_**[Screenshot Placeholder: Region selection in S3 deployment form]**_
+
+- **AWS Credential**: Select the shared AWS credential from the dropdown.
+
+_**[Screenshot Placeholder: AWS Credential dropdown with the shared credential selected]**_
+
+2. Click **Deploy** to start the deployment process.
+
+_**[Screenshot Placeholder: Deploy button in S3 deployment form]**_
+
+### Step 4: Monitor the Deployment
+
+1. The deployment process will initiate a stack job. You can monitor the progress in the **Jobs** or **Deployments** section.
+
+_**[Screenshot Placeholder: Deployment progress indicator]**_
+
+2. Wait for the deployment to complete successfully.
+
+_**[Screenshot Placeholder: Deployment success message or status]**_
+
+---
+
+## Verifying the Deployment in AWS Console
+
+1. Log in to the AWS console and navigate to the **S3** service.
+
+_**[Screenshot Placeholder: AWS console with S3 service highlighted]**_
+
+2. Look for the bucket you just created in the list of S3 buckets.
+
+_**[Screenshot Placeholder: S3 buckets list showing the newly created bucket]**_
+
+3. Click on the bucket to verify its properties and contents.
+
+_**[Screenshot Placeholder: S3 bucket details page]**_
+
+---
+
+## Best Practices and Security Considerations
+
+- **Access Keys Security**: Do not share your AWS Access Key ID and Secret Access Key. Treat them as sensitive information.
+
+- **Permissions**: Instead of using the **AdministratorAccess** policy, consider creating a custom IAM policy with only the necessary permissions for deploying resources via Planton Cloud.
+
+- **Credential Management**: Regularly rotate your AWS access keys and update them in Planton Cloud to maintain security.
+
+- **Environment Isolation**: Use separate environments in Planton Cloud to isolate resources and permissions between different stages (e.g., development, staging, production).
+
+---
+
+## Conclusion
+
+You have successfully connected your AWS account to Planton Cloud, shared the AWS credential with another environment, and deployed an S3 bucket using the shared credential. By integrating AWS with Planton Cloud, you can manage your cloud resources more effectively and collaborate across different environments.
