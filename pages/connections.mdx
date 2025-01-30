@@ -10,6 +10,92 @@ import { Cards } from 'nextra/components'
 
 # Connections
 
+## Overview
+
+The Connections feature allows you to integrate various external platforms and services with PlantonCloud. A “connection” is essentially a set of credentials that authorize the platform to perform operations on your behalf in third-party systems—such as AWS, Kubernetes clusters, GitHub, MongoDB Atlas, and more.
+
+By configuring these connections in one centralized interface, you can seamlessly manage your cloud resources, container registries, source code repositories, managed services, and even AI co-pilots—all within Latin Cloud.
+
+### Accessing the Connections Page
+
+1.	Log in to the PlantonCloud Platform.
+2.	From the dashboard, navigate to the sidebar
+3.	Click on Connections.
+
+The Connections page has two main tabs:
+
+*	Connections – where you create and view all possible “connection cards” for supported services.
+*	Existing Connections – lists all the credentials that have already been configured for your organization.
+
+![Alt Text](/gifs/connections/access-connections.gif)
+
+### Filtering by Category
+
+At the top, you’ll see a filter or category selector that helps you narrow down the type of connections:
+
+*	__Cloud Provider__ – AWS, Google Cloud Platform (GCP), Azure
+*	__Containers__ – Kubernetes clusters, Docker registries
+*	__Source Code__ – GitHub, GitLab, generic Git credentials
+*	__IaC__ – Pulumi backend, Stack Job Runner
+*	__ChatGPT__ – Use your own ChatGPT API credentials for co-pilot features
+*	__PaaS__ – Snowflake, Confluent Cloud, MongoDB Atlas.
+
+![Alt Text](/gifs/connections/filtering-connection-categories.gif)
+
+### Creating a New Connection
+
+1.	Select the Connections tab.
+2.	Locate the connection card you want to set up (e.g., “AWS” or “GitHub”).
+3.	Click connect button on the card to open a form or credential input screen.
+
+![Alt Text](/gifs/connections/create-new-connection.gif)
+
+Example: __AWS Connection__
+*	__Required Fields:__ Account ID, Region, Access Key, Secret Access Key
+*	__How to Obtain:__ Typically from your AWS Identity and Access Management (IAM) console.
+
+Once you enter and save the credentials, they will appear under Existing Connections.
+
+### Viewing & Managing Existing Connections
+
+To see all previously configured credentials:
+
+1.	Go to the Existing Connections tab.
+2.	The list view will display each connection’s Provider, Id, Created by Email Id and Created At Timestamp.
+3.	Click on the connection to view details, edit, Manage Permissions, Share With Other Environment and Delete it.
+
+_**[Gif Placeholder: AWS Credential Resource Page]**_
+
+### Frequently Asked Questions (FAQ)
+
+1.	__Why do I need to create a connection?__
+
+Connections allow PlantonCloud to automate tasks (such as provisioning or deployments) on external platforms. Without a valid connection, the platform can’t authenticate to perform those operations.
+
+2.	__Are my credentials secure?__
+
+All credentials are stored in a secure environment. Ensure you follow best practices like regularly rotating secret keys and using IAM policies.
+
+3.	__Can I have multiple connections of the same type?__
+
+Absolutely. For instance, you might have multiple AWS accounts (one for dev, one for prod) or multiple Docker registries.
+
+4.	__What if a connection fails?__
+
+Check the credentials (access keys, tokens, etc.) and verify they’re correct. You can update them at any time under “Existing Connections.”
+
+5.	__How do I remove or update a connection?__
+
+Go to “Existing Connections,” select the one you want to remove or edit, and follow the prompts.
+
+
+### Conclusion
+
+With Connections, you centralize and streamline integration with various services. By setting up credentials once, you enable PlantonCloud to handle complex workflows—like creating Kubernetes clusters, provisioning AWS resources, or interacting with your own Git repositories—all from a single interface.
+
+For more info or troubleshooting, please refer to our [Support & Help Center](https://github.com/plantoncloud/planton-cloud-support/issues/new/choose) or reach out to your PlantonCloud representative.
+
+
 <Cards>
     <Cards.Card
         icon={<AwsIcon />}
