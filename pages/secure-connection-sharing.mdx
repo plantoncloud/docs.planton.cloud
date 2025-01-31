@@ -1,4 +1,5 @@
 import { Callout } from 'nextra/components'
+import { Steps } from 'nextra/components'
 
 # Secure Connection Sharing
 
@@ -18,7 +19,8 @@ In many organizations, developers and engineers need quick access to various clo
 
 ## Step-by-Step Instructions
 
-__1. Create a New Credential (DevOps or Operations User)__
+<Steps>
+    ### Create a New Credential (DevOps or Operations User)
 
 If you are a DevOps or Operations user (e.g., Derek in this scenario), follow these steps to create a new credential:
 
@@ -29,14 +31,14 @@ If you are a DevOps or Operations user (e.g., Derek in this scenario), follow th
 
 ![Alt Text](/gifs/connections/create-new-aws-connection.gif)
 
-__2. Verify Newly Created Credential__
+### Verify Newly Created Credential
 
     *	After saving, you will be redirected to the Existing Connections tab, where you can see your newly created credential listed.
     *	Click on the id value to confirm the credential details and ensure it’s accurate.
 
 ![img.png](/images/connections/existing-connections-owner.png)
 
-__3. Share the Credential with Another Environment__
+### Share the Credential with Another Environment
 
     *	In the credential’s Details view, locate the Share or Manage Access button.
     *	Choose the environment or team you want to grant access to (e.g., “Acme Dev Environment” for Bala).
@@ -50,7 +52,7 @@ __3. Share the Credential with Another Environment__
     *	The shared user or team will not see the secret keys; they only gain the ability to use the connection for their self-service resource requests.
 </Callout>
 
-__4. Confirm Credential Availability (Recipient’s View)__
+### Confirm Credential Availability (Recipient’s View)
 
 In our example scenario, Bala is the recipient. Once Derek shares the credential:
 1.	Bala logs in to the platform with his account.
@@ -58,6 +60,7 @@ In our example scenario, Bala is the recipient. Once Derek shares the credential
 3.	Now sees the newly shared AWS credential under Existing Connections.
 
 ![img.png](/images/connections/existing-connections-recipient.png)
+</Steps>
 
 ## Security and Best Practices
 
