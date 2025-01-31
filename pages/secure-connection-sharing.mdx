@@ -1,0 +1,89 @@
+import { Callout } from 'nextra/components'
+
+# Secure Connection Sharing
+
+## Overview
+
+In many organizations, developers and engineers need quick access to various cloud resources (AWS, GCP, Azure, etc.) to spin up environments and test new features. However, sharing credentials can be risky if done improperly. Secure Connection Sharing on PlantonCloud platform addresses these concerns by:
+
+*	Allowing DevOps or Operations teams to create credentials.
+*	Restricting visibility of sensitive information (e.g., access keys, secret keys) to only authorized personnel.
+*	Enabling controlled sharing of credentials across different teams or environments (Dev, QA, Prod, etc.).
+
+## Use Cases
+
+*	Developer Needs AWS Access: A developer (Bala) requires AWS credentials in a development environment but should not see the actual secret keys.
+*	DevOps Creates & Shares Credential: A DevOps engineer (Derek) holds the necessary secrets. They create an AWS credential and share it specifically with Bala’s team/environment.
+*	Secure & Audited: All credential sharing actions are tracked and restricted by environment-based permissions.
+
+## Step-by-Step Instructions
+
+__1. Create a New Credential (DevOps or Operations User)__
+
+If you are a DevOps or Operations user (e.g., Derek in this scenario), follow these steps to create a new credential:
+
+    *	Select the Amazon Web Services (AWS) tile (or any other cloud provider you wish to configure).
+    *	Click on the Create Connection or Connect button.
+    *	Fill in the required information (e.g., Account Name, Account ID, Region, Access Key ID, Secret Access Key).
+    *	Click Submit to finalize.
+
+![Alt Text](/gifs/connections/create-new-aws-connection.gif)
+
+__2. Verify Newly Created Credential__
+
+    *	After saving, you will be redirected to the Existing Connections tab, where you can see your newly created credential listed.
+    *	Click on the id value to confirm the credential details and ensure it’s accurate.
+
+![img.png](/images/connections/existing-connections-owner.png)
+
+__3. Share the Credential with Another Environment__
+
+    *	In the credential’s Details view, locate the Share or Manage Access button.
+    *	Choose the environment or team you want to grant access to (e.g., “Acme Dev Environment” for Bala).
+    *	Confirm the sharing action.
+
+![Alt Text](/gifs/connections/share-credential.gif)
+
+<Callout type="info" emoji="ℹ️">
+    __Important:__
+    *	Only users with the necessary permissions can share credentials.
+    *	The shared user or team will not see the secret keys; they only gain the ability to use the connection for their self-service resource requests.
+</Callout>
+
+__4. Confirm Credential Availability (Recipient’s View)__
+
+In our example scenario, Bala is the recipient. Once Derek shares the credential:
+1.	Bala logs in to the platform with his account.
+2.	Navigates to Connections in the Dev Environment context.
+3.	Now sees the newly shared AWS credential under Existing Connections.
+
+![img.png](/images/connections/existing-connections-recipient.png)
+
+## Security and Best Practices
+
+*	Least Privilege: Always grant access to only the minimum necessary credentials for a specific environment or user.
+*	Masked Sensitive Data: The system hides sensitive fields like access keys by default from unauthorized users.
+*	Audit Trails: All create/share actions are logged, ensuring an audit trail for compliance and troubleshooting.
+*	Routine Rotation: We recommend rotating credentials regularly to maintain security best practices.
+
+## Frequently Asked Questions (FAQ)
+1.	Can the recipient see the secret keys?
+
+    No, only the user who created or has explicit permission can view the raw secret key fields. Recipients only see the credential reference.
+
+2.	What if I need to update or rotate an existing credential?
+
+    Navigate to the credential’s Details page, and update the fields as needed. The updated credentials will propagate to all users/environments that have access.
+
+3.	Is it possible to revoke access after sharing?
+
+    Yes, simply go to the Share or Manage Access options again and remove or modify the environment/user access. The credential will no longer be visible or usable by the revoked parties.
+
+4.	Are other cloud providers supported besides AWS?
+
+    Yes. This feature works similarly for other providers like GCP, Azure, etc. Check your dashboard for the list of supported integrations.
+
+For more info or troubleshooting, please refer to our [Support & Help Center](https://github.com/plantoncloud/planton-cloud-support/issues/new/choose) or reach out to your PlantonCloud representative.
+
+
+
