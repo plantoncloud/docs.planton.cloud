@@ -1,17 +1,96 @@
-## Deployment Component
+import { Steps } from 'nextra/components'
 
-### ProjectPlanton APIs
+# Deployment Component Store
 
-### Providers
+## Overview
 
-### Pulumi Modules
+The Deployment Component Store serves as a marketplace where all deployment components available on the platform are listed. It supports various cloud providers including:
 
-### Console App
+*	__Amazon Web Services (AWS)__
+*	__Microsoft Azure__
+*	__Google Cloud Platform__
+*	__Kubernetes__
+*	__Confident Cloud__
+*	__Snowflake__
+*	__MongoDB Atlas__
 
-![console-app-ss-1.png](/images/deployment-store/console-app-ss-1.png)
+Each component is represented as a card with key information and an option to deploy the component directly to your cloud account.
 
-![console-app-ss-2.png](/images/deployment-store/console-app-ss-2.png)
+![img.png](/images/deployment-store/deployment-store.png)
 
-### CLI
+## Key Features
 
-![cli-ss-1.png](/images/deployment-store/cli-ss-1.png)
+*	Marketplace Interface: Browse a list of deployment components, each represented as an interactive card.
+*	Text-Based Search: Quickly locate a component by entering relevant keywords (e.g., “RDS cluster”).
+*	Filtering Options: Narrow down components by selecting a specific cloud provider.
+*	Detailed Component View: Click on any component card to view in-depth details, metadata, and a link to the default Pulumi module.
+*	Seamless Deployment: Initiate the deployment process with a single click, leading to a form for configuring the component settings.
+
+## Using the Deployment Component Store
+
+### Browsing Components
+
+When you first navigate to the Deployment Component Store, you will see a grid or list of component cards. Each card represents a different deployment component, complete with an option to deploy.
+
+![img.png](/images/deployment-store/deployment-store-cards.png)
+
+### Searching for Components
+
+You can use the search functionality to quickly find a specific component. For example, if you need to set up an AWS RDS cluster, simply type “RDS cluster” in the search bar.
+
+<Steps>
+#### Locate the search bar at the top of the page.
+#### Enter the keyword, such as “RDS cluster”.
+#### The list of components will update to show the matching component(s).
+</Steps>
+
+![Alt Text](/gifs/deployment-store/search-components.gif)
+
+### Filtering by Provider
+
+In addition to text search, you can filter the list of components by cloud provider. Currently, the Deployment Component Store supports multiple providers.
+
+<Steps>
+#### Find the filter options on the right side of the page.
+#### Select the desired provider (e.g., Amazon Web Services).
+#### The view will update to show only the components associated with that provider.
+</Steps>
+
+![Alt Text](/gifs/deployment-store/filter-by-provider.gif)
+
+### Viewing Component Details
+
+Clicking on a component card opens a detailed view of the deployment component. This view provides all the necessary information and resources to understand and deploy the component, including:
+
+*	__Purpose and Description:__
+    A clear explanation of the component’s function and benefits.
+*	__Example:__
+    A sample YAML input that demonstrates how to create the resource.
+*	__API Specification:__
+    The proto file outlining the input specifications required from the user to create the resource.
+*	__Stack Input:__
+    The proto file defining the input message required to run the infrastructure-as-code (IaC) module.
+*	__Stack Outputs:__
+    The proto file specifying the output message returned by the IaC module.
+*	__IAC Module Link:__
+    A clickable link to the GitHub repository where the default Terraform/Pulumi module.
+
+This comprehensive view ensures that users have all the information they need to configure and deploy the component efficiently.
+
+![Alt Text](/gifs/deployment-store/details-page.gif)
+
+### Deploying a Component
+
+Once you have selected a component, you can deploy it directly to your cloud account.
+
+<Steps>
+####	Click the Deploy button on the component card.
+####	You will be redirected to a configuration form.
+####	Fill in the required details for the component (e.g., settings for an RDS cluster).
+####	Submit the form to deploy the component.
+</Steps>
+
+
+
+
+
