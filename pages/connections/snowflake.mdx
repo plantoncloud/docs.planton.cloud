@@ -1,7 +1,78 @@
-## Snowflake Account Connection
 
-#### Console App
+## 1. Adding a Snowflake Credential to the Platform
 
-![img.png](/images/connections/snowflake/img.png)
+### 1.1. Navigating to the Connections Page
+1. From your main dashboard, click on **Connections** in the left-hand menu.  
+2. On the **Connections** page, you will see various **connection cards** for different data providers (e.g., Snowflake, BigQuery, etc.).
 
-![img_1.png](/images/connections/snowflake/img_1.png)
+### 1.2. Selecting Snowflake
+1. Locate the **Snowflake** connection card.  
+2. Click the **Connect** button on the Snowflake card.
+
+> **Note:** Clicking **Connect** opens a form that collects the information needed to link your Snowflake account to the platform.
+
+---
+
+## 2. Form Details for Snowflake Credential
+
+![img.png](/images/connections/snowflake/snowflake-create-form.png)
+
+
+When you click **Connect** on the Snowflake card, the platform displays a two-section form:
+
+- **Metadata**  
+- **Snowflake Account**  
+
+Below is an explanation of each field in these sections.
+
+### 2.1. Metadata Section
+
+| **Field** | **Purpose** | **How to Obtain or Set** |
+|-----------|------------|--------------------------|
+| **Name**  | A custom label that identifies this Snowflake connection within your platform. This is how you will refer to or select this connection in other parts of the interface. | Enter any clear and descriptive name, such as *"My Snowflake Data Warehouse"* or *"Marketing Snowflake Connection"*. |
+
+### 2.2. Snowflake Account Section
+
+| **Field**   | **Purpose**                                                                                                                                                                                                     | **How to Obtain or Set**                                                                                                                                                                                                                     |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Name**    | The official Snowflake account name (the part that appears in the URL when you log into Snowflake).                                                                                                                                                   | Typically something like *`xy12345.us-east-2`*. You can find this by logging into your Snowflake instance; it is the portion of your account URL before `.snowflakecomputing.com`.                                                            |
+| **Region**  | The region in which your Snowflake account is hosted (e.g., `us-east-2`, `eu-west-1`).                                                                                                                                                                | This is required for specifying where your data warehouse is located. Snowflake indicates the region in your account URL.                                                                                                                   |
+| **Username** | The Snowflake user name that has the necessary privileges to access the desired databases, schemas, and tables.                                                                                                                                       | Use a valid Snowflake user with appropriate read/write permissions (or admin privileges if necessary). This information is set up in your Snowflake account via the Snowflake console or your internal IT process.                          |
+| **Password** | The password linked to the above Snowflake user.                                                                                                                                                                                                      | Make sure to use a secure password or prefer a Snowflake user that supports key-based authentication if available. Enter the correct password to ensure a successful connection.                                                             |
+
+---
+
+## 3. Obtaining Necessary Credentials from Snowflake
+
+1. **Log in to Snowflake**: Go to your Snowflake console (e.g., `https://xy12345.us-east-2.snowflakecomputing.com`).  
+2. **Identify your account name and region**:  
+   - The account name is the subdomain portion of your Snowflake URL (e.g., `xy12345.us-east-2`).  
+   - The region follows your account name in the URL (e.g., `us-east-2`).  
+3. **Create or use an existing user**:  
+   - Ensure the user has the appropriate privileges for the tasks you plan to perform (SELECT, CREATE, etc.).  
+   - Obtain or reset this user’s password as needed.  
+
+> **Tip:** If you have MFA or single sign-on (SSO) for Snowflake, check whether you need to create a dedicated user account or adjust user settings for programmatic access.
+
+---
+
+## 4. Saving Your Snowflake Credential
+
+1. **Verify all fields**: Double-check you have entered the correct values for:  
+   - Metadata → **Name**  
+   - Snowflake Account → **Name**, **Region**, **Username**, **Password**  
+2. Click **Submit**.  
+3. If the connection is successful, you will see a confirmation message or a newly listed Snowflake credential on the **Connections** page.  
+
+> **Note:** If authentication fails, you may see an error. Verify the details (especially the user name, password, and account name) and try again.
+
+---
+
+## 5. Additional Notes and Best Practices
+
+- **Security**: Always store credentials securely and avoid sharing passwords in plain text.  
+- **Naming Conventions**: Use a name that clearly indicates the environment or purpose (e.g., *Snowflake_Prod* or *Snowflake_Test*).  
+- **User Permissions**: Grant only the minimum required privileges to the Snowflake user used for connections (adhering to the principle of least privilege).  
+- **Region Selection**: Ensure you choose the correct region to avoid connection failures and to comply with any data locality requirements.
+
+---

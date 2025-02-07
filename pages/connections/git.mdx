@@ -1,7 +1,91 @@
-## Git Credential
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/git/img.png)
+1. **Navigate to the Connections Page**  
+   - On the **Connections** page, you will see a set of connection cards for various providers.
 
-![img_1.png](/images/connections/git/img_1.png)
+2. **Locate the Git Credential Card**  
+   - Look for the card labeled **Git** (or “Git Credential”).  
+   - This card represents the connection you need to configure for accessing Git repositories.
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button on the card will open a form requesting specific details (described below).
+
+4. **Fill Out the Git Credential Form**  
+   - Provide the required information as outlined in the **Form Details** section.  
+   - Once all fields have been completed, click **Submit** to save your Git credential.
+
+---
+
+## 2. Form Details of the Credential
+
+When you open the **Create Git Credential** form (as shown in the screenshot), there are two main sections: **Metadata** and **Details**.
+
+![img.png](/images/connections/git/git-create-form.png)
+
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A user-friendly identifier or nickname for this Git credential.  
+   - **Purpose**: Helps you distinguish this credential from others in your environment.  
+   - **Example**: “GitHub-Deploy-Key” or “Bitbucket-Repo-Credential”
+
+### 2.2 Details
+
+Within the **Details** section, you can configure any combination of the following credentials. Depending on your Git provider (e.g., GitHub, GitLab, Bitbucket), you may only need one or two of these fields filled in.
+
+1. **SSH Private Key**  
+   - **Description**: The private key used for SSH-based Git authentication.  
+   - **Purpose**: Grants secure access to Git repositories via SSH.  
+   - **How to Obtain**:  
+     1. Generate an SSH key pair on your local machine or via your Git provider’s instructions (often through `ssh-keygen` on Linux/Mac or PuTTYgen on Windows).  
+     2. Copy the **private** key contents (the file often named `id_rsa` or similar) and paste them into this field.  
+     3. Add the **public** key (often `id_rsa.pub`) to your Git provider’s repository or account settings under “SSH Keys.”
+
+2. **Password**  
+   - **Description**: The password associated with your Git user account.  
+   - **Purpose**: Enables Basic authentication with Git if SSH keys or tokens are not used.  
+   - **How to Obtain**:  
+     - Use your existing account password.  
+     - If your provider has 2FA enabled or discourages password usage, consider using a Personal Access Token instead.
+
+3. **Personal Access Token**  
+   - **Description**: A token created in your Git provider’s portal to grant scoped permissions (e.g., read or write access) to repositories.  
+   - **Purpose**: More secure than a password and can be set to expire or have limited access.  
+   - **How to Obtain**:  
+     1. Log in to your Git provider (GitHub, GitLab, Bitbucket, etc.).  
+     2. Navigate to your **Settings** or **Profile** and locate **Developer settings** or **Personal Access Tokens**.  
+     3. Create a new token with the required scopes (e.g., `repo` for GitHub).  
+     4. Copy the token and paste it here.  
+     5. Important: Tokens are often shown only once, so store them in a secure location if needed again.
+
+4. **Username**  
+   - **Description**: Your Git user account name or handle.  
+   - **Purpose**: Required for certain types of authentication or when using Personal Access Tokens or passwords (e.g., `git clone https://username@github.com/...`).  
+   - **How to Obtain**:  
+     - Usually the same username you use to log in to your Git provider.
+
+---
+
+## Additional Notes
+
+- **Security Best Practices**  
+  - Treat all credentials (SSH keys, passwords, tokens) like sensitive information.  
+  - Store them securely and rotate them periodically.  
+  - Never share your private key or tokens publicly.
+
+- **Provider-Specific Guidelines**  
+  - Each Git provider (GitHub, GitLab, Bitbucket) may have slightly different instructions for generating SSH keys or Personal Access Tokens. Always consult their official documentation if you have doubts.
+
+- **Clarity & Consistency**  
+  - Use consistent naming conventions for your credentials (e.g., “GitHub-Personal-Token-ReadWrite”). This makes it easier to manage multiple credentials over time.
+
+- **Testing & Validation**  
+  - After you click **Submit**, try cloning or pushing to a test repository from within your environment to verify that the credential works as expected.
+
+- **Troubleshooting**  
+  - If you encounter authentication errors, double-check that your SSH public key is correctly added to your Git account or that your Personal Access Token has the necessary permissions.  
+  - Confirm your Username matches the credentials or token’s owner.
+
+---

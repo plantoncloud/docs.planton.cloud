@@ -1,7 +1,67 @@
-## Confluent Cloud Account Connection
+## 1. Adding a Confluent Cloud Credential to the Platform
 
-#### Console App
+1. **Navigate to the Connections Page**  
+   - On the **Connections** page, you will see various connection cards for different providers.
 
-![img.png](/images/connections/confluent/img.png)
+2. **Locate the Confluent Cloud Card**  
+   - Find the **Confluent Cloud** card.  
+   - Each provider card typically includes a **Connect** (or **Add Credential**) button.
 
-![img_1.png](/images/connections/confluent/img_1.png)
+3. **Click “Connect”**  
+   - Clicking on **Connect** opens a configuration form where you will enter your Confluent Cloud details.  
+   - The form will prompt you for the information required to link your Confluent Cloud account to our platform.
+
+---
+
+## 2. Form Details for Confluent Cloud
+
+When you select **Confluent Cloud**, you will see a form labeled **Create Confluent Cloud**. The form fields are divided into sections, as shown in the screenshot:
+![img.png](/images/connections/confluent/confluentcloud-create-form.png)
+
+
+### 2.1 Metadata
+
+- **Name**  
+  - **Field Label:** *Name*  
+  - **Purpose:** A friendly name or label for your Confluent Cloud connection. This helps you (and your team) identify which Confluent Cloud account or project this credential belongs to.  
+  - **Example:** `"Production Confluent Cloud"` or `"Analytics Cluster Credentials"`  
+
+### 2.2 Confluent Account
+
+- **API Key**  
+  - **Field Label:** *API Key*  
+  - **Purpose:** The unique key that allows secure access to Confluent Cloud’s API. This key, paired with the secret, authenticates requests and ensures that only authorized applications can manage or consume your data in Confluent Cloud.  
+  - **Where to Obtain:**  
+    1. Sign in to your [Confluent Cloud console](https://confluent.cloud/).  
+    2. Navigate to **Cluster Settings** or **API Access** (exact name may vary) where you can view or create new API keys.  
+    3. Copy the **API Key** provided by Confluent Cloud.
+
+- **API Secret**  
+  - **Field Label:** *API Secret*  
+  - **Purpose:** The secret token corresponding to the above API Key. This should be treated like a password and kept confidential. It authorizes the API Key’s use within Confluent Cloud and should never be shared publicly.  
+  - **Where to Obtain:**  
+    1. When you generate an **API Key** in Confluent Cloud, you will also be shown the **API Secret** exactly once.  
+    2. Be sure to copy or securely store this secret—Confluent Cloud will not show it to you again.
+
+> **Important:** Ensure your API Key and Secret have the appropriate permissions for the operations you want to perform. You may need to assign specific roles or privileges within Confluent Cloud’s Role-Based Access Control (RBAC) system to allow the credential to create topics, consume messages, etc.
+
+---
+
+## Additional Notes
+
+- **Clarity and Consistency**  
+  Keep your naming conventions and credential labels consistent across different environments (e.g., staging, production) to avoid confusion.
+
+- **Security Best Practices**  
+  Treat your **API Key** and **API Secret** like sensitive passwords:
+  - Do **not** store them in plain text.
+  - Use an encrypted secret manager or vault solution to maintain them securely.  
+  - Rotate your keys regularly to maintain a strong security posture.
+
+- **Troubleshooting**  
+  If you encounter authorization errors or “permission denied” messages, verify that:
+  1. The API Key and Secret were entered correctly (typos are common).  
+  2. The API Key has the correct RBAC roles and permissions assigned in the Confluent Cloud console.  
+
+- **Provider-Specific Documentation**  
+  Since each provider (e.g., Confluent, Snowflake, Redshift) has different requirements, ensure you repeat a similar process for any other connections you need to add, referencing the relevant APIs or credential instructions in each provider’s portal.

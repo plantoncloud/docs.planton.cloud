@@ -1,7 +1,85 @@
-## GitHub Integration
 
-#### Console App
+## 1. Adding a Credential to the Platform
 
-![img.png](/images/connections/github/img.png)
+1. **Navigate to Connections**  
+   - Go to the **Connections** page in your platform’s user interface.  
+   - Here, you’ll see various provider “cards,” each representing a different integration option (e.g., GitHub, Kubernetes, AWS, etc.).
 
-![img_1.png](/images/connections/github/img_1.png)
+2. **Locate the GitHub Card**  
+   - Find the card labeled **GitHub** and click **Connect**.
+
+3. **Open the Credential Form**  
+   - A form labeled **Create GitHub Credential** will appear.  
+   - This form will prompt you for basic information (metadata) and specific GitHub App details.
+
+## 2. Form Details of the Credential
+
+When creating a GitHub credential, you will see two main sections in the form: **Metadata** and **GitHub App**. Below is an explanation of each field or option:
+
+![img.png](/images/connections/github/GitHub-create-form.png)
+
+### 2.1 Metadata
+
+- **Name**  
+  - **Purpose**: A friendly name for your GitHub credential. This is how you’ll identify it within the platform.  
+  - **How It Appears**: A single text field labeled “Name.”  
+  - **Examples**:  
+    - `MyOrg-GitHub`  
+    - `Production-GitHub-Creds`
+
+> **Tip**: Choose a name that clearly indicates the purpose of the credential (e.g., which organization or repos it will manage).
+
+### 2.2 GitHub App Section
+
+This section handles the actual connection to GitHub via a GitHub App. The screenshot shows two main elements:
+
+1. **Install App Button**  
+   - **Purpose**: Clicking this button will redirect you to GitHub, where you can install or configure the **PlantonCloud GitHub App** (or a similarly named app) on your GitHub account or organization.  
+   - **Why It Matters**: The GitHub App authorizes the platform to interact with your repositories (e.g., reading code, creating pull requests, triggering workflows).
+
+2. **Already Installed PlantonCloud GitHub App** (Checkbox)  
+   - **Purpose**: If you have already installed the GitHub App in your GitHub account or organization, you can select this checkbox.  
+   - **Why It Matters**: This lets the platform know you have completed the installation steps, so it does not prompt you to install it again.  
+   - **How to Use**:  
+     1. If the app is not yet installed, **leave this unchecked** and click **Install App** to complete installation.  
+     2. If you have installed it previously, **check the box** and proceed.
+
+#### Required Permissions and API Access
+
+- **Permissions**: The GitHub App needs certain permissions to read or write data (e.g., code, pull requests, webhooks). During app installation, GitHub will display a permissions list.  
+- **Repository Access**: You will be asked which repositories this GitHub App can access (all repositories in an organization or specific ones).  
+- **How to Obtain/Confirm**:  
+  1. From your GitHub account or organization settings, go to **Settings > Applications > Installed GitHub Apps**.  
+  2. Locate the **PlantonCloud GitHub App** (or similarly named).  
+  3. Click **Configure** to view or update permissions and repository access.
+
+### 2.3 Submitting the Form
+
+Once you have filled out both sections:
+
+1. **Provide a unique Name** in the Metadata section.  
+2. **Install** (or confirm installation of) the PlantonCloud GitHub App under the GitHub App section.  
+3. Click **Submit**.
+
+> **Note**: The platform may verify your GitHub App installation status automatically. If installation is incomplete or lacking permissions, you could receive an error message indicating that the credential cannot be validated.
+
+## Additional Notes
+
+- **Clarity & Conciseness**  
+  - Keep your credential name descriptive yet simple.  
+  - Make sure you select only the necessary repositories and permissions when installing the GitHub App to maintain least-privilege access.
+
+- **Consistent Format**  
+  - The **Metadata** section is standard across providers (e.g., Name, Description, etc.).  
+  - The **GitHub App** section is specific to GitHub, providing the install link and letting you confirm existing installation.
+
+- **User-Friendly Terminology**  
+  - “Install App” refers to installing a **GitHub App** on your GitHub account/organization. This is not the same as a local application; it’s a GitHub‐hosted integration that your account must allow.  
+  - **PlantonCloud GitHub App** is an example name. Your environment might have a different app name based on your platform’s branding.
+
+- **Further Resources**  
+  - [GitHub Documentation on Apps](https://docs.github.com/en/developers/apps)  
+  - [Managing GitHub App Permissions](https://docs.github.com/en/apps/creating-github-apps)  
+  - [Platform-Specific Docs/FAQs] – Check your platform’s help center for any additional guidance on connecting GitHub Apps.
+
+---

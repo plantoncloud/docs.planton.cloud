@@ -1,7 +1,160 @@
-## ChatGPT Account Connection
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/chat-gpt/img.png)
+1. **Navigate to the Connections Page**  
+   - On the Connections page, you will see a set of connection cards for different providers.
 
-![img_1.png](/images/connections/chat-gpt/img_1.png)
+2. **Locate the OpenAI (ChatGPT) Card**  
+   - Look for the card labeled **OpenAI** or **ChatGPT**.  
+   - This card represents the connection needed to enable ChatGPT services within the platform.
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button on the card will open a form that requests specific details needed to establish the ChatGPT integration.
+
+4. **Fill Out the ChatGPT Form**  
+   - Provide the required information as outlined below.  
+   - Once you have completed all fields, click **Submit** to finalize the connection.
+
+---
+
+## 2. Form Details of the Credential
+
+When you open the **Create ChatGPT** form (as shown in the provided screenshot), there are two main sections: **Metadata** and **OpenAI Account**. Each section contains fields that must be filled in to successfully integrate ChatGPT.
+
+![img.png](/images/connections/chat-gpt/chatGPT-create-form.png)
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A user-friendly identifier or nickname for this ChatGPT credential.  
+   - **Purpose**: This name helps you recognize and distinguish this credential from others you may have.  
+   - **Example**: “Marketing-ChatGPT” or “Internal-QA-ChatGPT”
+
+### 2.2 OpenAI Account
+
+Within the **OpenAI Account** section, you will see the following fields:
+
+1. **API Key**  
+   - **Description**: The secret key used to authenticate your API calls to OpenAI.  
+   - **Purpose**: Allows the platform to securely communicate with the OpenAI API on your behalf.  
+   - **How to Obtain**:  
+     1. Log in to your [OpenAI Dashboard](https://platform.openai.com/).  
+     2. Navigate to **View API keys** under your account settings.  
+     3. Click **Create new secret key** and copy the generated key.  
+     4. Paste the key into the **API Key** field in the platform’s form.  
+   - **Important**: Treat your API Key like a password—never share it publicly or store it in unsecured locations.
+
+2. **API URL**  
+   - **Description**: The endpoint URL to which all requests for ChatGPT will be sent.  
+   - **Purpose**: Ensures your API calls go to the correct service endpoint (e.g., OpenAI’s default API endpoint, or a custom endpoint if you are using Azure OpenAI).  
+   - **Common Example**: `https://api.openai.com/v1`  
+   - **How to Obtain**:  
+     - If you are using standard OpenAI services, use `https://api.openai.com/v1`.  
+     - If you have an Azure OpenAI deployment, retrieve the endpoint from your Azure portal.
+
+3. **Model ID**  
+   - **Description**: The identifier of the specific ChatGPT model you want to use.  
+   - **Purpose**: Informs the platform which version or variant of OpenAI’s language model to call.  
+   - **Common Examples**:  
+     - `gpt-3.5-turbo`  
+     - `gpt-4` (if you have access)  
+   - **How to Obtain**:  
+     - From your OpenAI dashboard, review the list of models you have access to.  
+     - If using Azure OpenAI, confirm the exact deployment name or model ID in your Azure portal.
+
+---
+
+## Additional Notes
+
+- **Clarity & Consistency**  
+  - Keep your naming conventions and settings uniform across all environments to avoid confusion.
+- **Security Best Practices**  
+  - Only share or store API credentials in secure, encrypted vaults or within your organization’s approved secret management tool.
+- **User-Friendly Terminology**  
+  - When documenting for team members, avoid overly technical jargon. Use clear, concise language to help everyone understand how to configure ChatGPT.
+- **Provider-Specific Guidelines**  
+  - If using providers other than OpenAI (such as Azure), be sure to follow their portal instructions for generating API keys, setting endpoints, and specifying model names.
+- **Version Control**  
+  - Because OpenAI’s models and endpoints can change over time, periodically review your model IDs and endpoints to keep them up to date.
+
+---
+
+**That’s it!** Once you’ve completed and submitted this form, your ChatGPT integration should be ready to use in your workflows. Make sure to test your credentials by sending a sample request to confirm everything is working properly. If you encounter any errors, double-check your API key, endpoint, and model ID against the details in your OpenAI or Azure portal.
+## 1. Adding Credentials to the Platform
+
+1. **Navigate to the Connections Page**  
+   - On the Connections page, you will see a set of connection cards for different providers.
+
+2. **Locate the OpenAI (ChatGPT) Card**  
+   - Look for the card labeled **OpenAI** or **ChatGPT**.  
+   - This card represents the connection needed to enable ChatGPT services within the platform.
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button on the card will open a form that requests specific details needed to establish the ChatGPT integration.
+
+4. **Fill Out the ChatGPT Form**  
+   - Provide the required information as outlined below.  
+   - Once you have completed all fields, click **Submit** to finalize the connection.
+
+---
+
+## 2. Form Details of the Credential
+
+When you open the **Create ChatGPT** form (as shown in the provided screenshot), there are two main sections: **Metadata** and **OpenAI Account**. Each section contains fields that must be filled in to successfully integrate ChatGPT.
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A user-friendly identifier or nickname for this ChatGPT credential.  
+   - **Purpose**: This name helps you recognize and distinguish this credential from others you may have.  
+   - **Example**: “Marketing-ChatGPT” or “Internal-QA-ChatGPT”
+
+### 2.2 OpenAI Account
+
+Within the **OpenAI Account** section, you will see the following fields:
+
+1. **API Key**  
+   - **Description**: The secret key used to authenticate your API calls to OpenAI.  
+   - **Purpose**: Allows the platform to securely communicate with the OpenAI API on your behalf.  
+   - **How to Obtain**:  
+     1. Log in to your [OpenAI Dashboard](https://platform.openai.com/).  
+     2. Navigate to **View API keys** under your account settings.  
+     3. Click **Create new secret key** and copy the generated key.  
+     4. Paste the key into the **API Key** field in the platform’s form.  
+   - **Important**: Treat your API Key like a password—never share it publicly or store it in unsecured locations.
+
+2. **API URL**  
+   - **Description**: The endpoint URL to which all requests for ChatGPT will be sent.  
+   - **Purpose**: Ensures your API calls go to the correct service endpoint (e.g., OpenAI’s default API endpoint, or a custom endpoint if you are using Azure OpenAI).  
+   - **Common Example**: `https://api.openai.com/v1`  
+   - **How to Obtain**:  
+     - If you are using standard OpenAI services, use `https://api.openai.com/v1`.  
+     - If you have an Azure OpenAI deployment, retrieve the endpoint from your Azure portal.
+
+3. **Model ID**  
+   - **Description**: The identifier of the specific ChatGPT model you want to use.  
+   - **Purpose**: Informs the platform which version or variant of OpenAI’s language model to call.  
+   - **Common Examples**:  
+     - `gpt-3.5-turbo`  
+     - `gpt-4` (if you have access)  
+   - **How to Obtain**:  
+     - From your OpenAI dashboard, review the list of models you have access to.  
+     - If using Azure OpenAI, confirm the exact deployment name or model ID in your Azure portal.
+
+---
+
+## Additional Notes
+
+- **Clarity & Consistency**  
+  - Keep your naming conventions and settings uniform across all environments to avoid confusion.
+- **Security Best Practices**  
+  - Only share or store API credentials in secure, encrypted vaults or within your organization’s approved secret management tool.
+- **User-Friendly Terminology**  
+  - When documenting for team members, avoid overly technical jargon. Use clear, concise language to help everyone understand how to configure ChatGPT.
+- **Provider-Specific Guidelines**  
+  - If using providers other than OpenAI (such as Azure), be sure to follow their portal instructions for generating API keys, setting endpoints, and specifying model names.
+- **Version Control**  
+  - Because OpenAI’s models and endpoints can change over time, periodically review your model IDs and endpoints to keep them up to date.
+
+---
+

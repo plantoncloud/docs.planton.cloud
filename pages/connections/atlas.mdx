@@ -1,7 +1,72 @@
-## MongoDB Atlas
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/atlas/img.png)
+1. **Navigate to the Connections Page**  
+   - On the **Connections** page, you will see various provider cards, each representing a different type of connection.
 
-![img_1.png](/images/connections/atlas/img_1.png)
+2. **Locate the MongoDB Atlas Card**  
+   - Look for the card labeled **MongoDB Atlas**.  
+   - This card will allow you to create credentials for connecting to MongoDB Atlas.
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button will open a form where you can enter the details required for your MongoDB Atlas credential.
+
+4. **Fill Out the MongoDB Atlas Form**  
+   - Provide the required information as described in the **Form Details** section below.  
+   - After completing all fields, click **Submit** to save your credentials.
+
+---
+
+## 2. Form Details of the Credential
+
+When you open the **Create MongoDB Atlas** form (as shown in the screenshot), there are two main sections: **Metadata** and **Atlas Account**.
+
+
+![img.png](/images/connections/atlas/mongodb-create-form.png)
+
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A user-friendly identifier or nickname for these MongoDB Atlas credentials.  
+   - **Purpose**: Helps you distinguish this credential from others in your environment.  
+   - **Example**: “Prod-Atlas-Creds” or “Dev-Atlas-Key”
+
+### 2.2 Atlas Account
+
+1. **Private Key**  
+   - **Description**: The private key associated with your MongoDB Atlas programmatic API access.  
+   - **Purpose**: Used to securely authenticate requests when interfacing with MongoDB Atlas via APIs or certain administrative functions.  
+   - **How to Obtain**:  
+     1. Log in to your MongoDB Atlas account.  
+     2. Go to **Project Settings** or **Organization Settings** (depending on where your API keys are managed).  
+     3. Under **Access Manager** or **API Keys**, create or retrieve an existing key pair.  
+     4. Copy the private key (it will be displayed only once upon creation).  
+   - **Important**: Keep this private key secure—do not commit it to source control or share it publicly.
+
+2. **Public Key**  
+   - **Description**: The corresponding public key that pairs with your private key.  
+   - **Purpose**: Used alongside the private key to authenticate with MongoDB Atlas’s programmatic API.  
+   - **How to Obtain**:  
+     - The public key is displayed in your MongoDB Atlas account alongside the private key when you create the API key.  
+     - Copy the public key and paste it into this field.  
+   - **Note**: Ensure you are using the correct key pair. Mixing credentials from different projects or organizations can cause authentication errors.
+
+---
+
+## Additional Notes
+
+- **Security Best Practices**  
+  - Treat your private key as highly sensitive. If it is compromised, revoke and regenerate it immediately in your MongoDB Atlas settings.  
+  - Limit the permissions of your API keys to only what is necessary for your intended operations (e.g., read-only vs. admin access).
+
+- **Provider-Specific Guidelines**  
+  - Refer to MongoDB’s official [Atlas API documentation](https://www.mongodb.com/docs/atlas/api/) for detailed instructions on creating and managing API keys.  
+  - If you have multiple Atlas projects, ensure you are adding keys for the correct project/organization.
+
+- **Clarity & Consistency**  
+  - Use consistent naming conventions for credentials across all environments to reduce confusion.  
+  - Label credentials with environment indicators if needed (e.g., “Production” vs. “Staging”).
+
+- **Testing & Validation**  
+  - After you submit the form, perform a test operation (like listing database clusters or checking cluster status) to confirm that the credentials are valid.

@@ -1,7 +1,92 @@
-## GitLab Integration
 
-#### Console App
+## 1. Adding a Credential to the Platform
 
-![img.png](/images/connections/gitlab/img.png)
+1. **Navigate to Connections**  
+   - Go to the **Connections** page in your platform’s UI.  
+   - Here, you’ll see “cards” representing various providers (e.g., GitHub, GitLab, Kubernetes, etc.).
 
-![img_1.png](/images/connections/gitlab/img_1.png)
+2. **Locate the GitLab Card**  
+   - Look for the card labeled **GitLab** and click **Connect**.
+
+3. **Open the Credential Form**  
+   - A form labeled **Create GitLab Credential** will appear, prompting you to enter general **Metadata** and specific **GitLab Client** information.
+
+## 2. Form Details of the Credential
+
+When creating a GitLab credential, the form is divided into two primary sections: **Metadata** and **GitLab Client**. The screenshot also shows a button labeled **Connect Using OAuth**, which provides an alternative authorization flow.
+
+![img.png](/images/connections/gitlab/gitlab-create-form.png)
+
+### 2.1 Metadata
+
+- **Name**  
+  - **Purpose**: A user-friendly identifier for your GitLab credential.  
+  - **Why It Matters**: This is how you’ll see and reference your GitLab connection within the platform (e.g., when configuring pipelines, selecting repositories, etc.).  
+  - **Examples**:  
+    - `MyGitLabCredentials`  
+    - `Corporate-GitLab-Creds`
+
+> **Tip**: Choose a clear name indicating the scope or purpose of this credential—especially useful if you manage multiple GitLab groups or personal vs. corporate projects.
+
+### 2.2 GitLab Client
+
+This section captures the specific details required to connect your platform account to your GitLab projects or groups.
+
+1. **Group Name**  
+   - **Purpose**: Identifies the GitLab group (or namespace) that you want to manage or access.  
+   - **Why It Matters**: If you have multiple groups under one GitLab account, specifying the group name ensures the platform targets the right projects.  
+   - **How to Obtain**:  
+     - In GitLab, go to **Groups** in the top navigation bar.  
+     - The group name is displayed at the top of the group overview page (or in the URL).  
+     - Example: if your URL is `gitlab.com/my-organization/my-group`, then your group name might be `my-group` or `my-organization/my-group`.
+
+2. **Access Token**  
+   - **Purpose**: The key allowing the platform to authenticate with GitLab and perform actions (e.g., retrieving repositories, creating merge requests).  
+   - **Why It Matters**: Without this token, the platform cannot securely communicate with GitLab’s API.  
+   - **How to Obtain**:  
+     1. Log in to GitLab.  
+     2. Go to **User Settings** > **Access Tokens** (or **Profile Settings** > **Access Tokens** if the UI differs).  
+     3. Generate a **Personal Access Token** (PAT) with the required scopes (e.g., `api`, `read_repository`, `write_repository`).  
+     4. Copy the token and paste it into this field.  
+
+3. **Refresh Token**  
+   - **Purpose**: Used to renew or refresh the Access Token without requiring manual re-entry, particularly if your token has an expiration or you’re using a specialized OAuth flow.  
+   - **Why It Matters**: Prevents disruptions in service by automatically updating credentials when they expire.  
+   - **How to Obtain**:  
+     - Depending on your GitLab setup, a refresh token may be generated alongside the initial access token (especially if you are using OAuth).  
+     - Check your GitLab **OAuth Applications** settings or your personal Access Token details for additional token fields.
+
+> **Note on OAuth**: If you prefer, you can click **Connect Using OAuth** (visible at the top-right in the screenshot). This method can automatically handle **Access** and **Refresh Tokens** for you. You’ll be redirected to GitLab to grant permissions, and the tokens may be populated automatically.
+
+### 2.3 Submitting the Form
+
+1. Fill out the **Name** field in the Metadata section.  
+2. Provide the **Group Name**, **Access Token**, and (optionally) **Refresh Token** in the GitLab Client section.  
+   - Or use the **Connect Using OAuth** button to authorize via GitLab directly.  
+3. Click **Submit** (or **Connect**).  
+4. The platform may validate the token or OAuth flow automatically. If there are permission issues or invalid tokens, you’ll see an error message to guide you.
+
+## Additional Notes
+
+1. **Clarity & Conciseness**  
+   - Keep your credential name simple.  
+   - Only fill the **Group Name** if your projects are under a specific group. Otherwise, your personal namespace might suffice.
+
+2. **Consistent Format Across Providers**  
+   - The **Metadata** section is always for a friendly name.  
+   - The **Provider** (GitLab, in this case) section handles specific authentication details—tokens, groups, or OAuth flows.
+
+3. **User-Friendly Terminology**  
+   - **Access Token** = A token from your GitLab account with certain permissions (scopes).  
+   - **Refresh Token** = A token to renew the access token automatically.
+
+4. **Permissions**  
+   - Make sure your Access Token includes the correct scopes. For instance, if you plan to push code or manage merge requests, you’ll need `api` or `write_repository` permissions.  
+   - If you only need read access, consider more restricted scopes.
+
+5. **Further Resources**  
+   - [GitLab Personal Access Tokens Documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)  
+   - [GitLab OAuth Applications Documentation](https://docs.gitlab.com/ee/integration/oauth_provider.html)  
+   - [Platform-Specific Help & FAQs] – Consult your platform’s help center for more in-depth info on integrating with GitLab.
+
+---

@@ -1,7 +1,80 @@
-## Kubernetes Cluster
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/kubernetes/img.png)
+1. **Navigate to the Connections Page**  
+   On the **Connections** page, you will see various connection cards for different providers (e.g., Kubernetes, AWS, GCP, etc.).
 
-![img_1.png](/images/connections/kubernetes/img_1.png)
+2. **Locate the Kubernetes Card**  
+   Find the **Kubernetes** connection card in the list.
+
+3. **Click the “Connect” Button**  
+   On the Kubernetes card, select **Connect**. This opens a form where you can provide your Kubernetes cluster credentials.
+
+4. **Fill Out the Kubernetes Credentials Form**  
+   Enter all required details in the form (see below for field-by-field explanations).
+
+5. **Submit the Form**  
+   Once you have entered the necessary information, click **Submit**. The platform will store the Kubernetes credentials securely, enabling you to manage and deploy resources to your Kubernetes cluster.
+
+---
+
+## 2. Form Details for Kubernetes Cluster Credentials
+
+When you click “Connect” on the Kubernetes card, you will see a form divided into two sections:
+![img.png](/images/connections/kubernetes/kubernetescluster-create-form.png)
+
+### A. Metadata
+
+- **Name**  
+  **Purpose**: Assign a user-friendly name to your Kubernetes connection.  
+  **Usage**: Helps you easily identify different clusters or environments (e.g., “Staging Cluster,” “Production Cluster”).
+
+### B. Details
+
+1. **Kubernetes Provider**  
+   **Purpose**: Indicates the provider or distribution hosting your Kubernetes cluster (e.g., AKS, EKS, GKE, or “Unspecified” if self-managed).  
+   **Usage**: Allows the platform to anticipate any provider-specific nuances or configurations.  
+   **How to Obtain**:  
+   - If unsure or using an on-prem or self-managed Kubernetes cluster, select **Unspecified**.  
+   - For managed clusters (Azure AKS, AWS EKS, Google GKE, etc.), choose the matching provider where applicable.
+
+2. **Cluster Endpoint**  
+   **Purpose**: The URL or IP address through which you access the Kubernetes API (often referred to as the “server” field in a kubeconfig file).  
+   **Usage**: Used by the platform to send requests to your cluster’s API.  
+   **How to Obtain**:  
+   - From your **kubeconfig** file, look for the `server: https://...` line.  
+   - For managed services (e.g., EKS, GKE, AKS), you can also find this in each provider’s dashboard or CLI tool.
+
+3. **Cluster CA Data**  
+   **Purpose**: The base64-encoded Certificate Authority (CA) certificate for your cluster.  
+   **Usage**: Ensures secure communication between the platform and the Kubernetes API.  
+   **How to Obtain**:  
+   - From your **kubeconfig** file, locate the `certificate-authority-data` field (which is already base64-encoded).  
+   - For some providers, the CA data is visible in the cluster’s configuration details or can be retrieved via their CLI tools (e.g., `kubectl config view`).
+
+4. **Service Account Key (base64)**  
+   **Purpose**: The base64-encoded token or key that grants access to cluster resources under a specific service account.  
+   **Usage**: Used by the platform to authenticate and manage deployments or workloads in your cluster.  
+   **How to Obtain**:  
+   - **Service Account Token**: Create or select a service account in your cluster that has the necessary permissions, then export or retrieve its token. Some setups store it in a Kubernetes Secret, which you can base64-encode.  
+   - **kubeconfig** Approach: If you have a specialized kubeconfig for a service account, you can extract the token from the `user` section, then base64-encode it if it is not already.  
+
+> **Note**: It is recommended to use a service account with only the permissions your platform needs—following the principle of least privilege.
+
+---
+
+## Additional Notes
+
+- **Security**: Keep your cluster credentials and service account tokens confidential. If compromised, anyone with these credentials can manage your entire cluster.  
+- **Provider-Specific**: The fields above generally align with standard Kubernetes configurations. In managed services (EKS, GKE, AKS), the specifics of cluster endpoints and CA data may differ slightly.  
+- **Naming Conventions**: Use meaningful names (e.g., “K8s-Dev-Cluster,” “K8s-Prod-Cluster”) to help distinguish multiple clusters.  
+- **Token or Key Rotation**: Rotate tokens or regenerate service account secrets periodically to follow best security practices.  
+
+---
+
+### Summary
+
+1. **Add** Kubernetes credentials via the **Connections** page by clicking **Connect** on the Kubernetes card.  
+2. **Provide** your cluster’s endpoint, CA data, and a service account token (base64-encoded).  
+3. **Select** the appropriate **Kubernetes Provider** or leave it as **Unspecified** if self-managed.  
+4. **Ensure** you keep your credentials secure and rotate them regularly.  

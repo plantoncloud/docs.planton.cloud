@@ -1,7 +1,90 @@
-## Microsoft Azure Connection
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/azure/img.png)
+1. **Navigate to the Connections Page**  
+   - On the **Connections** page, you will see various provider cards, each one representing a different type of connection.
 
-![img_1.png](/images/connections/azure/img_1.png)
+2. **Locate the Azure Card**  
+   - Look for the card labeled **Azure** or **Azure Credentials**.  
+   - This card allows you to create credentials for authenticating and managing your Azure services.
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button opens a form where you can enter the details required for the Azure credential.
+
+4. **Fill Out the Azure Credentials Form**  
+   - Provide the required information as described in the “Form Details” section.  
+   - After you have completed all fields, click **Submit** to save your Azure credentials.
+
+---
+
+## 2. Form Details of the Credential
+
+When you open the **Create Azure Credentials** form (as shown in the attached screenshot), there are two main sections: **Metadata** and **Azure Account Details**.
+
+
+![img.png](/images/connections/azure/azure-create-form.png)
+
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A friendly or descriptive name for this Azure credential.  
+   - **Purpose**: Helps you identify this set of Azure credentials among others you may have.  
+   - **Example**: “Azure-Production-Subscription” or “Azure-Dev-Environment”
+
+### 2.2 Azure Account Details
+
+1. **Tenant ID**  
+   - **Description**: The directory (tenant) ID for your Azure Active Directory instance.  
+   - **Purpose**: Uniquely identifies the Azure AD tenant under which your applications and subscriptions reside.  
+   - **How to Obtain**:  
+     1. Sign in to the [Azure Portal](https://portal.azure.com).  
+     2. Go to **Azure Active Directory** → **Properties** → **Tenant ID**.  
+     3. Copy the **Tenant ID** and paste it here.
+
+2. **Subscription ID**  
+   - **Description**: The identifier of the Azure subscription you want to manage or deploy resources into.  
+   - **Purpose**: Specifies which subscription your operations and billing will be associated with.  
+   - **How to Obtain**:  
+     1. In the [Azure Portal](https://portal.azure.com), navigate to **Subscriptions**.  
+     2. Locate the subscription you want to use.  
+     3. Copy the **Subscription ID** and paste it here.
+
+3. **Client ID**  
+   - **Description**: The application (client) ID of the registered Azure app under your Azure Active Directory.  
+   - **Purpose**: Tells Azure which application is requesting access.  
+   - **How to Obtain**:  
+     1. In the [Azure Portal](https://portal.azure.com), go to **Azure Active Directory** → **App registrations**.  
+     2. Select the relevant application.  
+     3. Copy the **Application (client) ID** and paste it here.
+
+4. **Client Secret**  
+   - **Description**: The password or secret key associated with your Azure AD application.  
+   - **Purpose**: Authenticates your application when requesting access to Azure resources.  
+   - **How to Obtain**:  
+     1. In **Azure Active Directory** → **App registrations**, open your application.  
+     2. Select **Certificates & secrets**, then create (or view) a new client secret.  
+     3. Copy the **secret** value before leaving the page, as it will not be shown again.  
+   - **Important**: Treat this secret like a password—never share it publicly or commit it to version control.
+
+---
+
+## Additional Notes
+
+- **Security Best Practices**  
+  - Always keep your Tenant ID, Subscription ID, Client ID, and Client Secret private.  
+  - Use separate credentials for different environments (e.g., development, staging, production) to minimize risk.  
+  - Rotate your Client Secrets regularly to maintain security compliance.
+
+- **Least Privilege Principle**  
+  - Configure only the necessary permissions for your Azure AD application. Avoid giving it full admin rights unless absolutely necessary.
+
+- **Testing & Verification**  
+  - Once you click **Submit**, use the platform’s functionalities (e.g., provisioning or resource management) to test your Azure credentials.  
+  - Confirm that your resources are being created, updated, or listed correctly in Azure.
+
+- **Troubleshooting**  
+  - If authentication fails, double-check each field to ensure no typos.  
+  - Validate that your Client Secret has not expired if you’ve generated it in the past.  
+  - Confirm you have the correct Subscription ID for the environment you intend to manage.
+

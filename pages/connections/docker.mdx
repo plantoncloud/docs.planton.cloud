@@ -1,7 +1,71 @@
-## Docker Registry
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/docker/img.png)
+1. **Navigate to the Connections Page**  
+   - On the **Connections** page, you will see a card for **Docker Registry** (or a similarly named card).  
+   - This connection type lets you add credentials for various container registries, including Azure Container Registry (ACR).
 
-![img_1.png](/images/connections/docker/img_1.png)
+2. **Locate the Docker Registry Credential Card**  
+   - Find the card labeled **Docker Registry**.  
+   - This card supports multiple providers (e.g., DockerHub, GCP, AWS ECR, Azure ACR).
+
+3. **Click “Connect”**  
+   - Clicking the **Connect** button opens the **Create Docker Registry Credential** form, where you can enter the details for your specific container registry.
+
+4. **Select Azure Container Registry**  
+   - In the **Details** section, locate the field **Docker Repo Provider**.  
+   - From the dropdown, choose **Azure** (or “Azure ACR,” depending on your platform’s labeling). This will reveal any Azure-specific fields you need to fill in.
+
+5. **Complete the Form & Submit**  
+   - Provide the requested information in **Metadata** and **Details** (see below).  
+   - Click **Submit** once you have entered all required fields.
+
+---
+
+## 2. Form Details (Azure-Specific Fields)
+
+When **Docker Repo Provider** is set to **Azure**, you may see one or more Azure-specific fields, in addition to the **Metadata** section. Below is an example of how these fields might appear and what they represent.
+![img.png](/images/connections/docker/docker-create-form.png)
+
+
+### 2.1 Metadata
+
+1. **Name**  
+   - **Description**: A friendly or descriptive name for this Docker Registry Credential.  
+   - **Purpose**: Helps you distinguish this registry credential from others in your environment.  
+   - **Example**: “Prod-ACR-Credential” or “Dev-Azure-Registry”
+
+### 2.2 Details (Azure)
+
+Once you have selected **Azure** (or “Azure ACR”) under **Docker Repo Provider**, you may see fields such as:
+
+1. **Azure Container Registry Name**  
+   - **Description**: The name of your Azure Container Registry instance (e.g., `mycompanyacr`).  
+   - **Purpose**: Specifies which ACR instance you want to use for pulling/pushing images.  
+   - **How to Obtain**:  
+     - Sign in to the [Azure Portal](https://portal.azure.com).  
+     - Navigate to **Container Registries** and select your registry.  
+     - Copy the **Login server name** (often `<registryName>.azurecr.io`) or the **Registry name**, depending on how your platform expects it.
+
+2. **Azure Service Principal (Client) ID**  
+   - **Description**: The Client ID of the Service Principal (SP) that has permission to access your Azure Container Registry.  
+   - **Purpose**: Authenticates as a specific “application” or “service principal” when interacting with your registry.  
+   - **How to Obtain**:  
+     1. Go to **Azure Active Directory** → **App registrations** in the Azure Portal.  
+     2. Select or create the application you are using to access ACR.  
+     3. Copy the **Application (client) ID**.
+
+3. **Azure Service Principal (Client) Secret**  
+   - **Description**: The password or secret corresponding to the Service Principal’s Client ID.  
+   - **Purpose**: Authenticates your Service Principal so it can push/pull images to/from your ACR.  
+   - **How to Obtain**:  
+     1. Still under **App registrations**, open your application’s **Certificates & secrets**.  
+     2. Create or view an existing **Client Secret** (the secret is only visible once).  
+     3. Copy and paste it here.
+
+4. **Azure Tenant ID** (Sometimes Required)  
+   - **Description**: The directory (tenant) ID under which your Service Principal is registered.  
+   - **Purpose**: Identifies which Azure Active Directory your application belongs to.  
+   - **How to Obtain**:  
+     - In **Azure Active Directory** → **Properties**, copy the **Tenant ID**.  
+

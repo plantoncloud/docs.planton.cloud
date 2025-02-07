@@ -1,7 +1,67 @@
-## Google Cloud Connection
 
-#### Console App
+## 1. Adding Credentials to the Platform
 
-![img.png](/images/connections/gcp/img.png)
+1. **Navigate to the Connections Page**  
+   On the **Connections** page, you will see various connection cards, each corresponding to a specific provider (e.g., GCP, AWS, Azure, etc.).
 
-![img_1.png](/images/connections/gcp/img_1.png)
+2. **Locate the GCP Card**  
+   Look for the **GCP** connection card in the list.
+
+3. **Click the “Connect” Button**  
+   On the GCP card, select **Connect**. This will open a form where you can configure your GCP credentials.
+
+4. **Fill Out the GCP Credentials Form**  
+   The form collects the necessary information (detailed below) to authenticate and interact with your GCP resources.
+
+5. **Submit the Form**  
+   After entering all required details, click **Submit**. If everything is correctly filled out, your GCP credentials will be securely stored, and the platform will be able to interact with your GCP projects.
+
+---
+
+## 2. Form Details for GCP Credentials
+
+When the “Connect” button is clicked on the GCP card, you will see a form with two primary sections:
+
+![img.png](/images/connections/gcp/gcp-create-form.png)
+
+
+### A. Metadata
+
+- **Name**  
+  **Purpose**: Provides a clear label for your GCP credential.  
+  **Usage**: Helps you identify and distinguish multiple credentials in your workspace (e.g., “GCP Dev Project,” “GCP Prod Project”).
+
+### B. Details
+
+- **Service Account Key (base64)**  
+  **Purpose**: This field holds your GCP service account key, encoded in Base64.  
+  **Usage**: The platform uses this key to authenticate and access your GCP resources.  
+  **How to Obtain**:  
+  1. Go to the [Google Cloud Console](https://console.cloud.google.com/).  
+  2. Navigate to **IAM & Admin** → **Service Accounts**.  
+  3. Select or create a service account with the necessary roles for your project (e.g., “Editor” or other role with required permissions).  
+  4. Click **Keys** → **Add Key** → **Create new key**.  
+  5. Choose **JSON** as the key type. A JSON file will download to your computer.  
+  6. Convert this JSON file to a Base64-encoded string (using a command-line tool or an online Base64 encoder).  
+  7. Paste that Base64-encoded string into the **Service Account Key (base64)** field.
+
+> **Tip**: Some platforms automatically provide a Base64-encoded key upon export, so check the file contents or your GCP portal to confirm whether further encoding is needed.
+
+---
+
+## Additional Notes
+
+- **Security**: Treat your service account key (Base64-encoded or raw JSON) as confidential. If compromised, unauthorized users can access your GCP resources.  
+- **Least Privilege**: Assign only the permissions that your projects and tasks require.  
+- **Naming Convention**: Use meaningful names for your credentials—this simplifies management when you have multiple GCP credential sets.  
+- **Key Rotation**: Periodically rotate your service account keys to maintain best security practices.  
+
+---
+
+### Summary
+
+- **Add** new GCP credentials by navigating to **Connections**, selecting **GCP**, and clicking **Connect**.
+- **Provide** your credential **Name** and the **Base64-encoded Service Account Key**.
+- **Obtain** your service account key JSON from Google Cloud Console and convert it to Base64 if necessary.
+- **Keep** credentials secure; rotate keys as recommended in GCP best practices.
+
