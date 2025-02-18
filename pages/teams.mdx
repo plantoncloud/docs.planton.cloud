@@ -1,183 +1,68 @@
-## Team Administration
+This page demonstrates how to manage teams in an organization using a sample project called **ACME Corp**. We will show how to create teams, add members, and grant permissions at a team level.
+## Overview of ACME Corp’s Org Structure 
+- ACME Corp’s organization chart (shown below as a Mermaid diagram) includes two founders (Frank and Fiona) at the top.  
+- Under the founders, there are two main teams: **Products** and **Operations**.  
+- The **Products** team is managed by Paul Wood, and it has two sub-teams: **Back End** and **Front End**. Each sub-team has two members.  
+- The **Operations** team is managed by Michael, and it has two sub-teams: **DevOps** and **Infrastructure**. Each sub-team has two members.
 
-## 1. Introduction & Overview
+![Team Overview](https://www.mermaidchart.com/raw/8edcd02e-c0d0-428b-9689-f34fc0691a20?theme=light&version=v0.1&format=svg)
 
-**Recommended Content Type**: Text + (Optional) Screenshot
+## Accessing the Members and Teams 
 
-**Text Explanation**:
+1. Log in to the **Planton-Cloud** console as **Frank** (the founder and owner of the organization).  
+2. On the dashboard, you will see a card showing the total number of members. In the demo, there are currently 14 members.  
+![img.png](/images/teams/frank-login-page-with-members-count.png)
 
-Use this section to introduce the purpose of the guide—managing teams on “Planton Cloud” (sometimes referred to in the transcript as “Plant & Cloud”). Emphasize that this documentation will illustrate creating and assigning permissions to teams in a sample organization called **ACME Corp**.
+3. Click on **Members** to view all organization members.  
+4. Next to **Members**, there is a **Teams** tab, which may be empty if no teams have been created yet.
 
-**Suggested Points to Cover**:
-- Brief statement of what team management entails on Planton Cloud.
-- The example org structure (ACME Corp) that will be used for demonstration.
-- A quick summary of major steps (creation of teams, assigning permissions, verifying access).
+![img.png](/images/teams/list-of-members-and-team-tab.png)
 
-**Screenshot** (optional):
-- The Planton Cloud or “Team Management on Planton Cloud” logo or landing page for quick visual context.
+## Creating a New Team
 
----
+In this demonstration, we create the **Back End** team. This team includes two existing members, **Bala** and **Bharat**.
 
-## 2. Organizational Chart Explanation
+1. From the **Teams** tab, click **Create Team** button.  
+2. Enter the **Team Name** (“backend”) and a **Description** (“back end team”).  
+3. Add members **Bala** and **Bharat**.  
+4. Click **Create** to submit the form. 
 
-**Recommended Content Type**: Text + Screenshot (or a short GIF if you want to demonstrate interactive highlighting)
+![img.png](/images/teams/creation-of-team-with-members.png)
 
-**Text Explanation**:
+> **Note**: The creator (Frank) is automatically added to the newly created team. This is expected behavior on the platform.
+## Viewing the New Team Details
 
-Explain the organizational structure for ACME Corp:
-- Two founders (Frank and Fiona) at the top.
-- Two main teams under them (Products and Operations).
-- Sub-teams under Products: Back End, Front End.
-- Sub-teams under Operations: DevOps, Infrastructure.
-- Each sub-team has two members.
+After creation, click the **backend** team name to see:
+- **Details**: The team name, description, and creator (Frank).  
+- **Roles**: Currently no roles or permissions assigned to the team.  
+- **Members**: Bala, Bharat, and Frank (added automatically as the creator).
+![img.png](/images/teams/viewing-new-team-details.png)
 
-**Screenshot**:
-- Show the org chart (e.g., a Mermaid or other diagram).  
-  - Highlight or annotate founders, main teams, and sub-teams to visually reflect the hierarchy.
+## Verifying Permissions Before Granting Roles
+  Initially, Bala has only the “organization member” role at an individual level. To illustrate how permissions work at the team level:
 
-**(Optional GIF)**:
-- If your documentation site supports GIFs, create a short GIF that zooms in on each section of the org chart sequentially:
-  1. Founders (Frank & Fiona).  
-  2. Products team (Manager: Paul Wood) and its sub-teams.  
-  3. Operations team (Manager: Michael) and its sub-teams.
+    1. Log in as **Bala**.  
+    2. Attempt to view an existing resource, e.g., **redis-kubernetes**, from the dashboard.  
+    3. Notice you see an **“Unauthorized”** error message, indicating Bala does not have permission to view this resource.
+    ![img.png](/images/teams/bala-unauthorized-for-redis-kubernetes.png)
 
----
+To fix Bala’s permission issue, assign a suitable role to the **backend** team:
 
-## 3. Navigating to the Members Section
+1. Log back in as **Frank**.  
+2. Go to **Teams** → **backend** → **Roles**.  
+3. Assign the **“organization viewer”** role to the **backend** team.
+Now, everyone in the **backend** team (including Bala and Bharat) gains viewer permissions at the organization level.
 
-**Recommended Content Type**: Text + Screenshot/GIF
+    ![img.png](/images/teams/fix-bala-permission-issue.png)
 
-**Text Explanation**:
+## Confirming the Updated Permissions
 
-1. Log in as Frank, who is an organization owner.  
-2. On the **Dashboard**, locate the **Members** card (it displays the number of members).  
-3. Click on the **Members** card to proceed to the Members page.
+1. Switch back to **Bala**’s account.  
+2. Revisit the **AWS DynamoDB** resource.  
+3. This time, Bala can successfully see the resource details without any “Unauthorized” error.
 
-**Screenshot**:
-- Show the dashboard view with the **Members** card highlighted.
+![img.png](/images/teams/confirming-bala-updated-permissions.png)
 
-**(Optional GIF)**:
-- A short recording of the cursor moving over the **Members** card, clicking it, and transitioning to the Members page.
 
----
 
-## 4. Viewing the Members & Teams Pages
-
-**Recommended Content Type**: Text + Screenshot
-
-**Text Explanation**:
-
-- After clicking on the **Members** card, you arrive at the **Members** page, which lists all current members of ACME Corp.
-- Next to **Members**, you’ll see a **Teams** tab. This tab is empty at first if no teams have been created.
-
-**Screenshot**:
-- Show the Members page layout:  
-  - The list of users (e.g., Frank, Fiona, Bala, Bharat, etc.).  
-  - The **Teams** tab with no entries yet.
-
----
-
-## 5. Creating a New Team (Back End)
-
-**Recommended Content Type**: Text + GIF (to illustrate the form completion)
-
-**Text Explanation**:
-
-1. Click **Create Team** (or the equivalent action button).  
-2. In the creation form:
-   - **Name**: “Back End”  
-   - **Description**: “Back End Team” (or similar)  
-   - **Members**: Select Bala and Bharat from the list.  
-3. Click **Create** (or **Save**) to finalize.
-
-This aligns with ACME Corp’s structure, where Bala and Bharat are Back End developers.
-
-**GIF**:
-- Demonstrate the following actions in a concise loop:
-  1. Clicking **Create Team**.  
-  2. Typing “Back End” in the Name field.  
-  3. Adding the description.  
-  4. Selecting Bala and Bharat.  
-  5. Clicking the **Create** button.  
-
-(If a GIF is not desired, use individual screenshots to illustrate each form field before and after completion.)
-
----
-
-## 6. Reviewing the Newly Created Team
-
-**Recommended Content Type**: Text + Screenshot
-
-**Text Explanation**:
-
-- After creation, a success message or confirmation is displayed.  
-- By clicking the **Back End** team name, you can view its details:
-  - **Name**, **Description**, **Creation Date**.  
-  - **Members** list: Bala, Bharat, and Frank (the creator) appear here.  
-- Note that no roles or permissions have been set yet.
-
-**Screenshot**:
-- The **Back End** team details page:
-  - Show the team info section (name, description).  
-  - Highlight the **Members** area with Bala, Bharat, and Frank listed.
-
----
-
-## 7. Illustrating Permission Limitations (Switch to Bala)
-
-**Recommended Content Type**: Text + (Optional) Screenshot
-
-**Text Explanation**:
-
-1. Open a new browser session (or incognito window) and log in as **Bala**.  
-2. Attempt to view or open a resource (for example, an AWS DynamoDB resource) in the console.  
-3. The platform displays an **“Unauthorized”** or **“Access Denied”** message because Bala does not have sufficient permissions.
-
-**Screenshot** (optional):
-- The “Unauthorized” error screen from Bala’s perspective.
-
----
-
-## 8. Assigning Permissions to the Team (Switch back to Frank)
-
-**Recommended Content Type**: Text + Screenshot (or short GIF)
-
-**Text Explanation**:
-
-1. Switch back to Frank’s account.  
-2. Go to the **Teams** page and select the **Back End** team.  
-3. Edit the team’s role or permission level.  
-   - Example: Assign **Organization Viewer** permission so the team can view resources.  
-4. Save changes.
-
-**Screenshot** or **GIF**:
-- If using a screenshot, show the **Edit Team** or **Permissions** dialog with **Organization Viewer** (or equivalent) selected.  
-- If using a GIF, briefly demonstrate opening the team details, changing the permission, and clicking **Save**.
-
----
-
-## 9. Verifying Access for Bala
-
-**Recommended Content Type**: Text + Screenshot
-
-**Text Explanation**:
-
-1. Return to Bala’s session.  
-2. Refresh the previously restricted resource page or navigate to the DynamoDB resource again.  
-3. Confirm that Bala can now see resource details without encountering “Unauthorized.”
-
-**Screenshot**:
-- Bala’s view of the resource page, successfully loaded.
-
----
-
-## 10. Conclusion
-
-**Recommended Content Type**: Text Summary
-
-**Text Explanation**:
-
-- Recap the steps: creating a “Back End” team, assigning members, and granting a permission level.  
-- Emphasize how this approach lets organizations manage user access efficiently by grouping members into teams and assigning permissions at the team level.  
-- Mention any next steps or related documentation links (e.g., instructions for setting advanced roles, managing multiple teams, or additional integration guides).
 

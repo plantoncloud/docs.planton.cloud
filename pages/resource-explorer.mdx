@@ -1,1 +1,42 @@
-## Resource Explorer Coming Soon
+### 1. Overview
+
+We start with the **Organization** as the root. It’s like the umbrella under which all your environments and resources live. An organization can be a company, a team, or any group that needs to organize and manage resources centrally.
+
+### 2. Environments
+
+Under each organization, we have **Environments**. These are typically development environments like ‘dev,’ ‘staging,’ or ‘production’—but you can name them however you like. Each environment is designed to hold the resources that apply specifically to that stage of your software development cycle.
+
+
+### 3. Resource Categories
+
+1. **GoToCloud Domain**  
+     "First up is the **GoToCloud** domain. This is probably the most familiar because it includes all the deployable resources you can provision in the cloud—things like AWS Lambda, DynamoDB, RDS, GCP Compute Engine, Kubernetes clusters, MongoDB Atlas instances, Confluent, Snowflake, and so on.  
+     Each resource is pre-defined within our platform, which means we already know the inputs, configurations, and states. So, when you create a resource, our platform sends all the information to the selected cloud provider and provisions it automatically. It’s a self-service model that makes life really easy for developers."
+
+2. **Connection Domain**  
+     "Next is **Connection**, which handles credentials. If you want to provision resources on AWS or Azure or any other provider, you need valid credentials. That’s exactly what the Connection domain does—it stores and manages those credentials securely, under the environment that needs them. Without these connections, you couldn’t deploy anything to the cloud!"
+
+3. **Config Map**  
+     "Another resource that also lives under an environment is the **Config Map**. This is basically a key-value store where you define variables you need for your applications—like environment variables, database connection strings, or any custom settings. When you deploy a microservice, these Config Maps inject the needed values so everything is consistent and centralized."
+
+
+### 4. GoToBuild Domain
+
+"Now, moving on to the **GoToBuild** domain. Unlike GoToCloud, GoToBuild resources are typically owned at the organization level because they’re not environment-specific. These resources help you develop and build your services:  
+- **Cookie cutter templates**: Predefined templates to bootstrap new services quickly.  
+- **GitHub Actions/Workflows**: Automated build pipelines that run whenever you push code.  
+- **Service definitions**: The fundamental information about your microservices, which remains the same across dev, staging, or prod.  
+
+Basically, if it has to do with building and bundling your software before deployment, you’ll find it under GoToBuild."
+
+
+### 5. IAC (Infrastructure as Code) Modules
+
+"Next, we have **IAC Modules**, or Infrastructure as Code modules. These are reusable code templates that define how certain resources are created or configured. Since they work for any environment, the modules live at the organization level. The only thing that changes is the input you pass in—like region, environment name, or resource size. But the core logic stays the same."
+
+
+### 6. IAMs (Identity and Access Management)
+
+"Our platform also handles **IAM resources**. There are two main types:  
+- **Identity Account**: Each user who signs up on the platform gets an identity account. A single user can be part of multiple organizations, so this doesn’t always have a direct one-to-one relationship with just one organization.  
+- **Teams**: A group of identity accounts. Teams live under an organization and help you assign access or permissions to multiple users at once."

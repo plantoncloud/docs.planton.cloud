@@ -1,7 +1,63 @@
-## Version History
+**Auditable Intelligence in action** on Planton Cloud platform. It uses a scenario, where **Bala** (a back-end engineer) creates and manages a Redis instance. This demonstration highlights how every action—create, update, and delete tracked and visible through version history, different views, and commit messages.
 
-## Who & When
+1. **Quick Action to Create a Redis Instance**  
+   - Bala opens the quick-action panel and types “deploy redis.”  
+   - He selects the **“Deploy Redis (Redis)”** option and is redirected to the **Create Form**.  
+   - Bala changes the default resource name (e.g., to `main-01`) and **submits the form**.  
+   - A pop-up prompts Bala for a **commit message**, where he enters,  
+     > *"Creating new Redis instance for dev environment"*  
+   - Planton and Cloud provisions the resource (you’ll briefly see the **Stack Jobs** or IAC workflow page confirming this).  
 
-## Configuration Diff
+2. **Viewing the Newly Created Version**  
+   - From the resource’s **Details** page, Bala clicks on the **“Versions”** tab.  
+   - He sees the new **Version Record** labeled with his commit message, timestamp, and his username.  
+   - Clicking on **“Show Diff”** (or **“Full Version”**) reveals a YAML representation of the resource.  
+   - Because this is the first version, the diff shows that everything was **added** (all lines are green).  
 
-## Infrastructure Diff
+3. **Updating the Resource Configuration**  
+   - Still on the resource’s **Details** page, Bala clicks **“Edit”** and changes the memory request from `50Mi` to `100Mi`.  
+   - Again, a commit message prompt appears. He enters,  > *"Updated memory to 100Mi"*  
+   - After saving, a **new Version Record** appears under the “Versions” tab.  
+   - In the **diff view**, the change from `50Mi` to `100Mi` is color-coded (showing what was removed in red and added in green).  
+
+4. **Deleting the Resource**  
+   - Bala clicks **“Delete”** and confirms by typing the resource ID.  
+   - He enters a **commit message** explaining why the resource is no longer required:  
+   > *"Deleting the resource since it is no longer needed"*  
+   - A third **Version Record** is created, showing this deletion action.  
+   - The diff indicates everything has been removed (all lines are red), confirming the resource state is now empty.
+
+5. **Link to IAC Workflows**  
+   - Each version is tied to a **Stack Job (IAC workflow)**.  
+   - By clicking the **IAC status icon** next to any version, Bala can see whether the infrastructure change **successfully deployed**, is **in progress**, or **encountered an error**.  
+   - This direct connection simplifies troubleshooting and ensures **real-time visibility** into infrastructure states.
+
+6. **Restoring the Resource (Optional)**  
+   - If needed, Bala (or another team member like Bharat) could click **“Restore”** on a deleted version to roll back the resource to its previous state.  
+   - A new version would then be created, complete with a **restore commit message** and an updated YAML configuration.
+
+---
+
+## Key Takeaways
+
+- **Every Action Logged**: Creation, updates, deletions, and restores all produce new, chronological versions.  
+- **Commit Messages for Clarity**: Each change is annotated with a short description so the entire team understands *why* something changed.  
+- **Instant Diffs**: Compare any two versions side by side or in a unified view to see exactly what lines were added, removed, or modified.  
+- **IAC Integration**: Each version links to the actual infrastructure deployment status, ensuring no guesswork about what is live in the cloud.  
+- **Full Traceability & Compliance**: Auditable Intelligence captures the *who*, *what*, and *when* of every resource change—essential for compliance reviews and quick troubleshooting.
+
+---
+
+### Where This Fits in the Larger Picture
+
+This hands-on demonstration aligns perfectly with the **Auditable Intelligence** feature set described in the **sales-focused web page script**. It shows you:
+
+- How **commit messages** and version records capture the full context around each resource change.  
+- The power of **Diff Views** for pinpointing the smallest configuration adjustments.  
+- How **“self-service” DevOps** remains fully accountable through built-in audit trails.  
+
+Whether you’re managing critical microservices or running large-scale applications, Planton and Cloud’s **Auditable Intelligence** provides the transparency and control you need to move fast while staying compliant.
+
+---
+
+Use this scenario to **showcase the real-world ease** of tracking changes with Planton and Cloud’s Auditable Intelligence. It can be incorporated into product demos, tutorials, or training sessions to illustrate how straightforward it is to manage cloud resources without sacrificing compliance or clarity.
