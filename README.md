@@ -14,3 +14,5 @@ brew install pstoedit inkscape
 inkscape input.eps --export-filename=output.svg
 ```
 ..
+
+irshad
