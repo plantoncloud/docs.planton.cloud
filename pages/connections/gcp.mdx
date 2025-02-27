@@ -16,7 +16,6 @@
 5. **Submit the Form**  
    After entering all required details, click **Submit**. If everything is correctly filled out, your GCP credentials will be securely stored, and the platform will be able to interact with your GCP projects.
 
----
 
 ## 2. Form Details for GCP Credentials
 
@@ -27,27 +26,20 @@ When the “Connect” button is clicked on the GCP card, you will see a form wi
 
 ### A. Metadata
 
-- **Name**  
   **Purpose**: Provides a clear label for your GCP credential.  
-  **Usage**: Helps you identify and distinguish multiple credentials in your workspace (e.g., “GCP Dev Project,” “GCP Prod Project”).
+  **Usage**: Helps you identify and distinguish multiple credentials in your workspace (e.g., “GCP Dev Project,”“GCP Prod Project”).
 
 ### B. Details
-
 - **Service Account Key (base64)**  
-  **Purpose**: This field holds your GCP service account key, encoded in Base64.  
-  **Usage**: The platform uses this key to authenticate and access your GCP resources.  
-  **How to Obtain**:  
-  1. Go to the [Google Cloud Console](https://console.cloud.google.com/).  
-  2. Navigate to **IAM & Admin** → **Service Accounts**.  
-  3. Select or create a service account with the necessary roles for your project (e.g., “Editor” or other role with required permissions).  
-  4. Click **Keys** → **Add Key** → **Create new key**.  
-  5. Choose **JSON** as the key type. A JSON file will download to your computer.  
-  6. Convert this JSON file to a Base64-encoded string (using a command-line tool or an online Base64 encoder).  
-  7. Paste that Base64-encoded string into the **Service Account Key (base64)** field.
+
+Purpose: This field holds your GCP service account key, encoded in Base64. 
+
+Usage: The platform uses this key to authenticate and access your GCP resources.
+
+GCP Account Key & Links: Generate a service account key in JSON format from the Google Cloud Console, then convert it to Base64.
+Documentation: [GCP Account Key](https://cloud.google.com/iam/docs/keys-create-delete)
 
 > **Tip**: Some platforms automatically provide a Base64-encoded key upon export, so check the file contents or your GCP portal to confirm whether further encoding is needed.
-
----
 
 ## Additional Notes
 
@@ -55,8 +47,6 @@ When the “Connect” button is clicked on the GCP card, you will see a form wi
 - **Least Privilege**: Assign only the permissions that your projects and tasks require.  
 - **Naming Convention**: Use meaningful names for your credentials—this simplifies management when you have multiple GCP credential sets.  
 - **Key Rotation**: Periodically rotate your service account keys to maintain best security practices.  
-
----
 
 ### Summary
 

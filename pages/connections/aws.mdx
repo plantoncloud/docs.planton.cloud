@@ -15,8 +15,6 @@
 5. **Submit the Form**  
    After entering all required details, click **Submit** to save your credentials. Upon successful completion, the platform will be able to use these credentials to interact with AWS resources.
 
----
-
 ## 2. Form Details for AWS Credentials
 
 When the “Connect” button is clicked on the AWS card, a form will appear. The form is typically divided into two sections:
@@ -37,29 +35,21 @@ These fields are specific to AWS and are required to establish a secure connecti
 1. **Account ID**  
    **Purpose**: The 12-digit identifier for your AWS account (e.g., `123456789012`).  
    **Usage**: Tells the platform which AWS account it should use when making service calls.  
-
+   Documentation: [AWS Account ID Reference](https://docs.aws.amazon.com/accounts/)
 2. **Default Region**  
    **Purpose**: The primary AWS region you want to use (e.g., `us-east-1`, `us-west-2`).  
    **Usage**: Sets the default region for AWS services accessed via this credential.  
-   **How to Obtain**:  
-   - Common region codes can be found in the [AWS Regions documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html).  
-   - Choose the region closest to your geographic location or most relevant for your project.
+   Documentation: [AWS Regions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html)
 
 3. **Access Key ID**  
    **Purpose**: Your AWS access key used to programmatically sign requests.  
    **Usage**: This key, combined with your secret access key, authorizes the platform to access AWS resources on your behalf.  
-   **How to Obtain**:  
-   - Log in to your AWS console and navigate to **IAM** → **Users** → (Select your user) → **Security credentials**.  
-   - Create or view your **Access Key ID** under **Access Keys**. Remember that AWS only displays the secret key once upon creation.
+   Documentation: [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
 4. **Secret Access Key**  
    **Purpose**: Your AWS secret access key used to programmatically sign requests (pairs with your Access Key ID).  
    **Usage**: Must be kept confidential—along with your Access Key ID—to prevent unauthorized access to your AWS resources.  
-   **How to Obtain**:  
-   - When creating a new access key in the AWS IAM console, copy the **Secret Access Key** during the creation process.  
-   - AWS will not show this secret again once you navigate away, so store it securely.
-
----
+   Documentation: [AWS Access Key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
 ## 3. Obtaining AWS Credentials
 
@@ -74,8 +64,6 @@ To obtain your **Access Key ID** and **Secret Access Key**, you need an AWS Iden
    - Store these securely (e.g., in a password manager).
 
 > **Important**: For security best practices, grant the minimal permissions required for the intended tasks and rotate your keys regularly.
-
----
 
 ## Additional Notes
 
